@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual SEIF — Indústria · 2026</title>
+<meta name="description" content="Passo a passo do SEIF para a indústria: habilitações, matriz de documentos, fornecedores, usuários, trabalhadores, notificações, painel e relatórios. Edição 2026.">
+<meta name="theme-color" content="#0D6D41">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D6D41'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='34' font-weight='700' text-anchor='middle' fill='%23CAFFDF'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-600-normal.woff2) format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-700-normal.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-800-normal.woff2) format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(assets/fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(assets/fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+</style>
+<link rel="stylesheet" href="assets/css/manual.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Ícones reutilizados na página -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-busca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.6v12.8c0 .8.9 1.3 1.6.9l10-6.4c.6-.4.6-1.4 0-1.8l-10-6.4C8.9 4.3 8 4.8 8 5.6z"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6M11 8v6M8 11h6"/></symbol>
+    <symbol id="i-lupa" viewBox="0 0 24 24"><path fill="currentColor" d="M20 19.59V8l-6-6H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.74.83-2.76.83-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1.02-.31 1.96-.83 2.75L20 19.59zM9 13c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/></symbol>
+    <symbol id="i-bloqueado" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></symbol>
+    <symbol id="i-grupo" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar__in">
+    <div class="marks"><a class="mark" href="#inicio" aria-label="SEIF — voltar ao início"><i class="lg lg--seif" data-lg="logo_w" role="img" aria-label="SEIF Santa Catarina"></i></a><b class="marks__sep" aria-hidden="true"></b><i class="lg lg--sesi" data-lg="logo_sesi" role="img" aria-label="SESI"></i><b class="marks__sep" aria-hidden="true"></b><i class="lg lg--saude" data-lg="logo_saude" role="img" aria-label="sesi+saúde"></i><span class="mark__name">Manual da Indústria</span></div>
+    <nav class="bar__nav" id="menu" aria-label="Capítulos">
+      <a class="only-mobile" href="index.html">← Trocar manual</a>
+      <a href="#habilitar">Habilitações</a>
+      <a href="#matriz">Matriz</a>
+      <a href="#fornecedores">Fornecedores</a>
+      <a href="#usuarios">Usuários</a>
+      <a href="#trabalhadores">Trabalhadores</a>
+      <a href="#notificacoes">Notificações</a>
+      <a href="#relatorios">Relatórios</a>
+    </nav>
+    <a class="bar__swap" href="index.html" title="Voltar à escolha do manual">Trocar manual</a>
+    <button class="bar__search" type="button" data-busca aria-label="Buscar no manual"><svg aria-hidden="true"><use href="#i-busca"/></svg><span>Buscar</span><kbd>/</kbd></button>
+    <button class="bar__menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <i class="bar__progress" aria-hidden="true"></i>
+</header>
+
+<nav class="chapters" aria-label="Atalho para os capítulos">
+  <ol>
+    <li><a href="#inicio"><span>Início</span><i></i></a></li>
+    <li><a href="#habilitar"><span>01 · Habilitações</span><i></i></a></li>
+    <li><a href="#matriz"><span>02 · Matriz</span><i></i></a></li>
+    <li><a href="#fornecedores"><span>03 · Fornecedores</span><i></i></a></li>
+    <li><a href="#usuarios"><span>04 · Usuários</span><i></i></a></li>
+    <li><a href="#trabalhadores"><span>05 · Trabalhadores</span><i></i></a></li>
+    <li><a href="#notificacoes"><span>06 · Notificações</span><i></i></a></li>
+    <li><a href="#relatorios"><span>07 · Relatórios</span><i></i></a></li>
+  </ol>
+</nav>
+
+<main id="conteudo">
+  <section class="sec dark hero" id="inicio" data-title="Início" aria-label="Apresentação">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Indústria · Edição 2026</p>
+        <h1><span class="rv"><span>Manual</span></span> <span class="rv"><span>de</span></span> <span class="rv"><span>uso</span></span> <span class="rv"><span>do</span></span> <span class="rv"><span><em>SEIF</em></span></span></h1>
+        <div class="hero__rule"></div>
+        <p class="hero__lede">O passo a passo para configurar os documentos exigidos, vincular fornecedores, cadastrar usuários e trabalhadores e acompanhar tudo pelo painel e pelos relatórios.</p>
+        <button class="finder" type="button" data-busca><svg aria-hidden="true"><use href="#i-busca"/></svg><span>O que você precisa fazer? Ex.: vincular fornecedor</span><kbd>/</kbd></button>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#habilitar">Começar pelas habilitações</a>
+          <a class="btn" href="#temas">Ver todos os temas</a>
+        </div>
+        <ul class="hero__meta"><li>7 temas</li><li>23 passos</li><li>7 vídeos</li><li>Dados fictícios</li></ul>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="layer screen screen--a" data-depth="0.6"><img data-img="i7_1" alt="" width="1600" height="1000" data-now></div>
+        <div class="layer screen screen--b" data-depth="1.3"><img data-img="i3_3" alt="" width="1600" height="750" data-now></div>
+        <div class="layer chipcard" data-depth="2">
+          <small>Fornecedores vinculados</small>
+          <strong>INDÚSTRIA MODELO S.A.</strong>
+          <div class="pills"><span class="pill pill--a">4 fornecedores</span><span class="pill pill--r">24 trabalhadores</span><span class="pill pill--i">1 irregular</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">role<span>↓</span></div>
+  </section>
+<section class="sec" id="sobre" data-title="O que é o SEIF">
+    <div class="wrap">
+      <div class="about">
+        <div class="up">
+          <p class="eyebrow">Sobre a plataforma</p>
+          <h2>O que é o <b>SEIF</b></h2>
+          <p>O SEIF (Segurança e Informação) é uma plataforma do SESI que facilita a gestão de fornecedores em SST (Segurança e Saúde no Trabalho). Consolidando dados dos trabalhadores em uma plataforma única, o SEIF permite que gestores monitorem a segurança em campo e gerem notificações sobre vencimento de documentos. Isso promove maior agilidade, conformidade legal e segurança, fortalecendo a confiança e colaboração entre indústrias, fornecedores e trabalhadores no setor industrial brasileiro.</p>
+          <div class="brands"><img class="brands__sesi" data-img="logo_sesi" alt="SESI" width="470" height="176" loading="lazy" decoding="async"><img class="brands__saude" data-img="logo_saude" alt="SESI Saúde" width="553" height="95" loading="lazy" decoding="async"></div>
+        </div>
+        <figure class="photo up"><img data-img="capa" alt="Trabalhador da indústria consultando o celular" width="1100" height="699" loading="lazy"></figure>
+      </div>
+      <div class="toc" id="temas">
+        <div class="toc__head up">
+          <div><p class="eyebrow">Temas</p><h2>O que você pode <b>fazer no SEIF</b></h2></div>
+          <p>Escolha um tema ou use a busca.</p>
+        </div>
+        <div class="toc__grid">
+        <a class="card up" href="#habilitar"><span class="card__n">01</span><span class="card__t">Como habilitar <b>documentos</b></span><span class="card__m">3 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#matriz"><span class="card__n">02</span><span class="card__t">Como adicionar uma <b>matriz de documento</b></span><span class="card__m">6 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#fornecedores"><span class="card__n">03</span><span class="card__t">Como vincular <b>fornecedores</b></span><span class="card__m">4 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#usuarios"><span class="card__n">04</span><span class="card__t">Como adicionar <b>usuários</b></span><span class="card__m">2 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#trabalhadores"><span class="card__n">05</span><span class="card__t">Como adicionar <b>trabalhadores</b></span><span class="card__m">3 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#notificacoes"><span class="card__n">06</span><span class="card__t">Onde ficam as <b>notificações</b></span><span class="card__m">2 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#relatorios"><span class="card__n">07</span><span class="card__t">Como acessar <b>relatórios e painéis</b></span><span class="card__m">3 passos · vídeo <i>→</i></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="habilitar" data-title="01 · Como habilitar documentos" aria-labelledby="h-habilitar">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">01</span>
+        <div class="up">
+          <h2 id="h-habilitar">Como habilitar <b>documentos</b></h2>
+          <p class="chap__lede">Cadastre cada documento que poderá ser exigido de empresas e trabalhadores.</p>
+          <p class="chap__meta">3 passos · vídeo de 0:42</p>
+        </div>
+        <div class="vid up" id="video-habilitar" data-vid="01" data-src="assets/video/industria/tema-01.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 01: Como habilitar documentos (0:42)">
+              <img data-img="poster_01" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:42</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.50"><span class="vid__code">1.1</span><span class="vid__title">Acesse o menu</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="12.04"><span class="vid__code">1.2</span><span class="vid__title">Busque pelo botão</span><span class="vid__time">0:12</span></button></li><li><button type="button" data-t="20.35"><span class="vid__code">1.3</span><span class="vid__title">Preencha o formulário</span><span class="vid__time">0:20</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-1-1" data-code="1.1" data-k="habilitação documento sistema menu cadastro">
+          <span class="step__dot" aria-hidden="true">1.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.1: </span>Acesse o menu</h3>
+            <p>No menu lateral, clique em <b>“Sistema”</b>.</p><p>No quadro <b>“Habilitações”</b>, clique em <b>“Abrir”</b> para acessar a página de cadastro.</p><button class="watch" type="button" data-watch="habilitar" data-t="3.50"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: No menu lateral, clique em “Sistema”.">
+              <span class="tilt"><img data-img="i1_1" alt="No menu lateral, clique em “Sistema”." width="1600" height="1000" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-1-2" data-code="1.2" data-k="cadastrar nova lista de habilitações status ativo">
+          <span class="step__dot" aria-hidden="true">1.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.2: </span>Busque pelo botão</h3>
+            <p>A página mostra as habilitações já cadastradas, com carga horária, hierarquia, categoria e status.</p><p>Para criar uma nova, clique em <b>“Cadastrar nova”</b>.</p><button class="watch" type="button" data-watch="habilitar" data-t="12.04"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:12</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: A página mostra as habilitações já cadastradas, com carga horária, hierarquia, categoria e status.">
+              <span class="tilt"><img data-img="i1_2" alt="A página mostra as habilitações já cadastradas, com carga horária, hierarquia, categoria e status." width="1600" height="1000" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-1-3" data-code="1.3" data-k="nome carga horária categoria trabalhador empresa salvar habilitação">
+          <span class="step__dot" aria-hidden="true">1.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.3: </span>Preencha o formulário</h3>
+            <p>Informe o <b>nome</b> e a <b>carga horária</b> (quando houver) e escolha a <b>categoria</b>: documento do <b>trabalhador</b> ou da <b>empresa</b>.</p><p>Clique em <b>“Salvar habilitação”</b>. Ela passa a aparecer na lista e pode ser usada na matriz de documentos.</p><button class="watch" type="button" data-watch="habilitar" data-t="20.35"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:20</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Informe o nome e a carga horária (quando houver) e escolha a categoria: documento do trabalhador ou da empresa.">
+              <span class="tilt"><img data-img="i1_3" alt="Informe o nome e a carga horária (quando houver) e escolha a categoria: documento do trabalhador ou da empresa." width="1600" height="412" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="matriz" data-title="02 · Como adicionar uma matriz de documento" aria-labelledby="h-matriz">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">02</span>
+        <div class="up">
+          <h2 id="h-matriz">Como adicionar uma <b>matriz de documento</b></h2>
+          <p class="chap__lede">Defina quais documentos cada tipo de vínculo e cada função precisam enviar.</p>
+          <p class="chap__meta">6 passos · vídeo de 1:16</p>
+        </div>
+        <div class="vid up" id="video-matriz" data-vid="02" data-src="assets/video/industria/tema-02.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 02: Como adicionar uma matriz de documento (1:16)">
+              <img data-img="poster_02" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 1:16</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="5.22"><span class="vid__code">2.1</span><span class="vid__title">Busque pelo botão</span><span class="vid__time">0:05</span></button></li><li><button type="button" data-t="16.80"><span class="vid__code">2.2</span><span class="vid__title">Selecione o vínculo</span><span class="vid__time">0:16</span></button></li><li><button type="button" data-t="26.70"><span class="vid__code">2.3</span><span class="vid__title">Preencha o formulário</span><span class="vid__time">0:26</span></button></li><li><button type="button" data-t="46.99"><span class="vid__code">2.4</span><span class="vid__title">Defina a periodicidade e salve</span><span class="vid__time">0:46</span></button></li><li><button type="button" data-t="54.26"><span class="vid__code">2.5</span><span class="vid__title">“Nova atividade”</span><span class="vid__time">0:54</span></button></li><li><button type="button" data-t="61.21"><span class="vid__code">2.6</span><span class="vid__title">Preencha a atividade e salve</span><span class="vid__time">1:01</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec soft">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-2-1" data-code="2.1" data-k="matriz de documentos cadastrar novo tipo de vínculo nova atividade">
+          <span class="step__dot" aria-hidden="true">2.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.1: </span>Busque pelo botão</h3>
+            <p>Em <b>“Sistema”</b>, abra a <b>“Matriz de Documento”</b>.</p><p>Ao clicar em <b>“Cadastrar”</b>, aparecem duas opções: <b>“Novo tipo de vínculo”</b> ou <b>“Nova atividade”</b>.</p><button class="watch" type="button" data-watch="matriz" data-t="5.22"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:05</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Em “Sistema”, abra a “Matriz de Documento”.">
+              <span class="tilt"><img data-img="i2_1" alt="Em “Sistema”, abra a “Matriz de Documento”." width="1600" height="525" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-2" data-code="2.2" data-k="tipo de vínculo próprio terceiro subcontratado">
+          <span class="step__dot" aria-hidden="true">2.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.2: </span>Selecione o vínculo</h3>
+            <p>Em <b>“Novo tipo de vínculo”</b>, escolha para quem a lista de documentos vale: trabalhadores <b>próprios</b>, <b>terceiros</b> ou <b>subcontratados</b>.</p><button class="watch" type="button" data-watch="matriz" data-t="16.80"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:16</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Em “Novo tipo de vínculo”, escolha para quem a lista de documentos vale: trabalhadores próprios, terceiros ou subcontrat">
+              <span class="tilt"><img data-img="i2_2" alt="Em “Novo tipo de vínculo”, escolha para quem a lista de documentos vale: trabalhadores próprios, terceiros ou subcontrat" width="1600" height="525" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-3" data-code="2.3" data-k="estabelecimentos categoria subcategoria habilitações adicionar à lista">
+          <span class="step__dot" aria-hidden="true">2.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.3: </span>Preencha o formulário</h3>
+            <p>Escolha os <b>estabelecimentos</b> em que a matriz vale e defina a <b>categoria</b> e, se precisar, a <b>subcategoria</b>.</p><p>Selecione as habilitações exigidas e clique em <b>“Adicionar à lista”</b>.</p><button class="watch" type="button" data-watch="matriz" data-t="26.70"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:26</span></button><div class="note"><strong>Importante</strong><p>A categoria é o que o fornecedor escolhe ao enviar os documentos da empresa. Use nomes que ele reconheça, como “Manutenção elétrica”.</p></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Escolha os estabelecimentos em que a matriz vale e defina a categoria e, se precisar, a subcategoria.">
+              <span class="tilt"><img data-img="i2_3" alt="Escolha os estabelecimentos em que a matriz vale e defina a categoria e, se precisar, a subcategoria." width="1600" height="550" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-4" data-code="2.4" data-k="periodicidade vigência anual bianual única salvar">
+          <span class="step__dot" aria-hidden="true">2.4</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.4: </span>Defina a periodicidade e salve</h3>
+            <p>Para cada documento da lista, escolha a <b>periodicidade</b> (por exemplo, anual, bianual ou única) e clique em <b>“Salvar”</b>.</p><button class="watch" type="button" data-watch="matriz" data-t="46.99"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:46</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Para cada documento da lista, escolha a periodicidade (por exemplo, anual, bianual ou única) e clique em “Salvar”.">
+              <span class="tilt"><img data-img="i2_4" alt="Para cada documento da lista, escolha a periodicidade (por exemplo, anual, bianual ou única) e clique em “Salvar”." width="1600" height="850" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-5" data-code="2.5" data-k="nova atividade função atividade específica">
+          <span class="step__dot" aria-hidden="true">2.5</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.5: </span>“Nova atividade”</h3>
+            <p>Para exigir documentos de uma função ou atividade específica (por exemplo, eletricista ou trabalho em altura), escolha <b>“Nova atividade”</b> em <b>“Cadastrar”</b>.</p><button class="watch" type="button" data-watch="matriz" data-t="54.26"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:54</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Para exigir documentos de uma função ou atividade específica (por exemplo, eletricista ou trabalho em altura), escolha “">
+              <span class="tilt"><img data-img="i2_5" alt="Para exigir documentos de uma função ou atividade específica (por exemplo, eletricista ou trabalho em altura), escolha “" width="1600" height="525" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-6" data-code="2.6" data-k="categoria da função estabelecimentos documentação de trabalhadores periodicidade">
+          <span class="step__dot" aria-hidden="true">2.6</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.6: </span>Preencha a atividade e salve</h3>
+            <p>Informe a <b>categoria da função ou atividade</b>, a subcategoria (se houver) e os estabelecimentos.</p><p>Inclua as habilitações, adicione à lista, defina a <b>periodicidade</b> de cada uma e clique em <b>“Salvar”</b>.</p><button class="watch" type="button" data-watch="matriz" data-t="61.21"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>1:01</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Informe a categoria da função ou atividade, a subcategoria (se houver) e os estabelecimentos.">
+              <span class="tilt"><img data-img="i2_6" alt="Informe a categoria da função ou atividade, a subcategoria (se houver) e os estabelecimentos." width="1600" height="700" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="fornecedores" data-title="03 · Como vincular fornecedores" aria-labelledby="h-fornecedores">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">03</span>
+        <div class="up">
+          <h2 id="h-fornecedores">Como vincular <b>fornecedores</b></h2>
+          <p class="chap__lede">Ligue o fornecedor aos estabelecimentos em que ele vai atuar.</p>
+          <p class="chap__meta">4 passos · vídeo de 0:46</p>
+        </div>
+        <div class="vid up" id="video-fornecedores" data-vid="03" data-src="assets/video/industria/tema-03.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 03: Como vincular fornecedores (0:46)">
+              <img data-img="poster_03" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:46</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.78"><span class="vid__code">3.1</span><span class="vid__title">“Vincular novo”</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="19.16"><span class="vid__code">3.2</span><span class="vid__title">Escolha o estabelecimento</span><span class="vid__time">0:19</span></button></li><li><button type="button" data-t="32.69"><span class="vid__code">3.3</span><span class="vid__title">“Meus fornecedores”</span><span class="vid__time">0:32</span></button></li><li><button type="button" data-t="38.08"><span class="vid__code">3.4</span><span class="vid__title">Visão do fornecedor</span><span class="vid__time">0:38</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-3-1" data-code="3.1" data-k="fornecedores ver fornecedores vincular novo meus fornecedores">
+          <span class="step__dot" aria-hidden="true">3.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.1: </span>“Vincular novo”</h3>
+            <p>No menu lateral, clique em <b>“Fornecedores”</b> e em <b>“Ver fornecedores”</b>.</p><p>A aba <b>“Meus fornecedores”</b> mostra os que já estão vinculados. Para incluir outro, abra a aba <b>“Vincular novo”</b>: ela lista os fornecedores já cadastrados no SEIF.</p><button class="watch" type="button" data-watch="fornecedores" data-t="3.78"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: No menu lateral, clique em “Fornecedores” e em “Ver fornecedores”.">
+              <span class="tilt"><img data-img="i3_1" alt="No menu lateral, clique em “Fornecedores” e em “Ver fornecedores”." width="1600" height="700" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-3-2" data-code="3.2" data-k="vincular fornecedor estabelecimento salvar">
+          <span class="step__dot" aria-hidden="true">3.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.2: </span>Escolha o estabelecimento</h3>
+            <p>Na linha do fornecedor, clique no ícone de <b>vincular</b>.</p><p>Em <b>“Meus estabelecimentos”</b>, clique em <b>“Vincular”</b> no estabelecimento desejado e, para concluir, em <b>“Salvar”</b>.</p><button class="watch" type="button" data-watch="fornecedores" data-t="19.16"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:19</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Na linha do fornecedor, clique no ícone de vincular.">
+              <span class="tilt"><img data-img="i3_2" alt="Na linha do fornecedor, clique no ícone de vincular." width="1600" height="700" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-3-3" data-code="3.3" data-k="meus fornecedores lista status de vínculo">
+          <span class="step__dot" aria-hidden="true">3.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.3: </span>“Meus fornecedores”</h3>
+            <p>O fornecedor vinculado passa a aparecer na aba <b>“Meus fornecedores”</b>, onde ficam todos os fornecedores da empresa.</p><button class="watch" type="button" data-watch="fornecedores" data-t="32.69"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:32</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: O fornecedor vinculado passa a aparecer na aba “Meus fornecedores”, onde ficam todos os fornecedores da empresa.">
+              <span class="tilt"><img data-img="i3_3" alt="O fornecedor vinculado passa a aparecer na aba “Meus fornecedores”, onde ficam todos os fornecedores da empresa." width="1600" height="750" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-3-4" data-code="3.4" data-k="visão do fornecedor ambiente do fornecedor enviar documentos aprovação">
+          <span class="step__dot" aria-hidden="true">3.4</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.4: </span>Visão do fornecedor</h3>
+            <p>A partir daí, o fornecedor vê o estabelecimento no ambiente dele e pode enviar os documentos da empresa e dos trabalhadores para aprovação, de acordo com as categorias da matriz.</p><p>O passo a passo do lado do fornecedor está no <a class="link" href="terceiro.html">manual do Terceiro</a>.</p><button class="watch" type="button" data-watch="fornecedores" data-t="38.08"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:38</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: A partir daí, o fornecedor vê o estabelecimento no ambiente dele e pode enviar os documentos da empresa e dos trabalhado">
+              <span class="tilt"><img data-img="forn" alt="A partir daí, o fornecedor vê o estabelecimento no ambiente dele e pode enviar os documentos da empresa e dos trabalhado" width="1600" height="1068" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="usuarios" data-title="04 · Como adicionar usuários" aria-labelledby="h-usuarios">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">04</span>
+        <div class="up">
+          <h2 id="h-usuarios">Como adicionar <b>usuários</b></h2>
+          <p class="chap__lede">Dê acesso ao SEIF para outras pessoas da sua empresa.</p>
+          <p class="chap__meta">2 passos · vídeo de 0:29</p>
+        </div>
+        <div class="vid up" id="video-usuarios" data-vid="04" data-src="assets/video/industria/tema-04.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 04: Como adicionar usuários (0:29)">
+              <img data-img="poster_04" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:29</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.86"><span class="vid__code">4.1</span><span class="vid__title">Busque pelo botão</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="12.40"><span class="vid__code">4.2</span><span class="vid__title">Preencha o formulário</span><span class="vid__time">0:12</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec soft">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-4-1" data-code="4.1" data-k="usuários cadastrar usuário acesso">
+          <span class="step__dot" aria-hidden="true">4.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.1: </span>Busque pelo botão</h3>
+            <p>No menu lateral, clique em <b>“Usuários”</b> e, na página de usuários, em <b>“Cadastrar usuário”</b>.</p><button class="watch" type="button" data-watch="usuarios" data-t="3.86"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: No menu lateral, clique em “Usuários” e, na página de usuários, em “Cadastrar usuário”.">
+              <span class="tilt"><img data-img="i4_1" alt="No menu lateral, clique em “Usuários” e, na página de usuários, em “Cadastrar usuário”." width="1600" height="700" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-4-2" data-code="4.2" data-k="nome cpf e-mail perfil salvar usuário">
+          <span class="step__dot" aria-hidden="true">4.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.2: </span>Preencha o formulário</h3>
+            <p>Informe o <b>nome completo</b>, o <b>CPF</b>, o <b>e-mail</b> e o <b>perfil</b> do usuário.</p><p>Clique em <b>“Salvar usuário”</b>. O novo usuário passa a aparecer na lista.</p><button class="watch" type="button" data-watch="usuarios" data-t="12.40"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:12</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Informe o nome completo, o CPF, o e-mail e o perfil do usuário.">
+              <span class="tilt"><img data-img="i4_2" alt="Informe o nome completo, o CPF, o e-mail e o perfil do usuário." width="1600" height="525" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="trabalhadores" data-title="05 · Como adicionar trabalhadores" aria-labelledby="h-trabalhadores">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">05</span>
+        <div class="up">
+          <h2 id="h-trabalhadores">Como adicionar <b>trabalhadores</b></h2>
+          <p class="chap__lede">Um por um ou vários de uma vez, por planilha.</p>
+          <p class="chap__meta">3 passos · vídeo de 0:46</p>
+        </div>
+        <div class="vid up" id="video-trabalhadores" data-vid="05" data-src="assets/video/industria/tema-05.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 05: Como adicionar trabalhadores (0:46)">
+              <img data-img="poster_05" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:46</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.98"><span class="vid__code">5.1</span><span class="vid__title">Busque pelo botão</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="16.32"><span class="vid__code">5.2</span><span class="vid__title">Preencha o CPF</span><span class="vid__time">0:16</span></button></li><li><button type="button" data-t="31.02"><span class="vid__code">5.3</span><span class="vid__title">Preencha os dados</span><span class="vid__time">0:31</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-5-1" data-code="5.1" data-k="trabalhadores adicionar cadastrar importar planilha funcionário">
+          <span class="step__dot" aria-hidden="true">5.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 5.1: </span>Busque pelo botão</h3>
+            <p>No menu lateral, clique em <b>“Trabalhadores”</b> e em <b>“Adicionar trabalhadores”</b>.</p><p>Escolha <b>“Cadastrar trabalhador”</b> para cadastrar um por vez ou <b>“Importar planilha”</b> para cadastrar vários de uma vez.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="3.98"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: No menu lateral, clique em “Trabalhadores” e em “Adicionar trabalhadores”.">
+              <span class="tilt"><img data-img="i5_1" alt="No menu lateral, clique em “Trabalhadores” e em “Adicionar trabalhadores”." width="1600" height="1000" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-5-2" data-code="5.2" data-k="cpf validar e continuar já cadastrado">
+          <span class="step__dot" aria-hidden="true">5.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 5.2: </span>Preencha o CPF</h3>
+            <p>Informe o <b>CPF</b> e clique em <b>“Validar e continuar”</b>.</p><p>O SEIF confere se a pessoa já tem cadastro. Se tiver, os dados do trabalhador vêm preenchidos na próxima tela.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="16.32"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:16</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Informe o CPF e clique em “Validar e continuar”.">
+              <span class="tilt"><img data-img="i5_2" alt="Informe o CPF e clique em “Validar e continuar”." width="1600" height="525" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-5-3" data-code="5.3" data-k="contrato cargo função cbo informações pessoais continuar">
+          <span class="step__dot" aria-hidden="true">5.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 5.3: </span>Preencha os dados</h3>
+            <p>Na etapa <b>“Contrato”</b>, preencha os dados do contrato e clique em <b>“Salvar”</b>.</p><p>Em seguida, complete as <b>“Informações pessoais”</b> e clique em <b>“Continuar”</b>. O trabalhador está cadastrado.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="31.02"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:31</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Na etapa “Contrato”, preencha os dados do contrato e clique em “Salvar”.">
+              <span class="tilt"><img data-img="i5_3" alt="Na etapa “Contrato”, preencha os dados do contrato e clique em “Salvar”." width="1600" height="625" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="notificacoes" data-title="06 · Onde ficam as notificações" aria-labelledby="h-notificacoes">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">06</span>
+        <div class="up">
+          <h2 id="h-notificacoes">Onde ficam as <b>notificações</b></h2>
+          <p class="chap__lede">Os avisos de documentos para aprovar, irregulares e a vencer.</p>
+          <p class="chap__meta">2 passos · vídeo de 0:30</p>
+        </div>
+        <div class="vid up" id="video-notificacoes" data-vid="06" data-src="assets/video/industria/tema-06.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 06: Onde ficam as notificações (0:30)">
+              <img data-img="poster_06" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:30</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.58"><span class="vid__code">6.1</span><span class="vid__title">Ícone de sino</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="13.20"><span class="vid__code">6.2</span><span class="vid__title">Lista de notificações</span><span class="vid__time">0:13</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec soft">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-6-1" data-code="6.1" data-k="notificações sino avisos">
+          <span class="step__dot" aria-hidden="true">6.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 6.1: </span>Ícone de sino</h3>
+            <p>As notificações ficam no <b>sino</b>, ao lado do seu nome. Clique nele para ver as últimas e em <b>“Ver todas as notificações”</b> para abrir a lista completa.</p><button class="watch" type="button" data-watch="notificacoes" data-t="3.58"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: As notificações ficam no sino, ao lado do seu nome. Clique nele para ver as últimas e em “Ver todas as notificações” par">
+              <span class="tilt"><img data-img="i6_1" alt="As notificações ficam no sino, ao lado do seu nome. Clique nele para ver as últimas e em “Ver todas as notificações” par" width="1600" height="412" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-6-2" data-code="6.2" data-k="documentos para aprovação irregulares a vencer filtros configurar notificações">
+          <span class="step__dot" aria-hidden="true">6.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 6.2: </span>Lista de notificações</h3>
+            <p>A lista mostra todos os avisos: documentos para aprovação, documentos irregulares, documentos a vencer e tarefas.</p><p>Use os filtros de <b>data</b>, <b>categoria</b> e <b>título</b> para achar um aviso. Em <b>“Configurar notificações”</b>, escolha o que quer receber.</p><button class="watch" type="button" data-watch="notificacoes" data-t="13.20"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:13</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: A lista mostra todos os avisos: documentos para aprovação, documentos irregulares, documentos a vencer e tarefas.">
+              <span class="tilt"><img data-img="i6_2" alt="A lista mostra todos os avisos: documentos para aprovação, documentos irregulares, documentos a vencer e tarefas." width="1600" height="1000" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="relatorios" data-title="07 · Como acessar relatórios e painéis" aria-labelledby="h-relatorios">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">07</span>
+        <div class="up">
+          <h2 id="h-relatorios">Como acessar <b>relatórios e painéis</b></h2>
+          <p class="chap__lede">Acompanhe os números da empresa e extraia relatórios.</p>
+          <p class="chap__meta">3 passos · vídeo de 0:44</p>
+        </div>
+        <div class="vid up" id="video-relatorios" data-vid="07" data-src="assets/video/industria/tema-07.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 07: Como acessar relatórios e painéis (0:44)">
+              <img data-img="poster_07" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:44</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.86"><span class="vid__code">7.1</span><span class="vid__title">Painel</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="19.56"><span class="vid__code">7.2</span><span class="vid__title">Selecione o relatório</span><span class="vid__time">0:19</span></button></li><li><button type="button" data-t="29.34"><span class="vid__code">7.3</span><span class="vid__title">Gere o relatório</span><span class="vid__time">0:29</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-7-1" data-code="7.1" data-k="painel análises dashboard trabalhadores fornecedores checklists ocorrências tarefas">
+          <span class="step__dot" aria-hidden="true">7.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.1: </span>Painel</h3>
+            <p>Ao entrar no SEIF, a primeira página é o <b>Painel</b>. Ele também fica em <b>“Análises”</b>, no menu lateral.</p><p>Use as abas para ver os dados de trabalhadores, fornecedores, checklists, ocorrências e tarefas.</p><button class="watch" type="button" data-watch="relatorios" data-t="3.86"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Ao entrar no SEIF, a primeira página é o Painel. Ele também fica em “Análises”, no menu lateral.">
+              <span class="tilt"><img data-img="i7_1" alt="Ao entrar no SEIF, a primeira página é o Painel. Ele também fica em “Análises”, no menu lateral." width="1600" height="1000" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-7-2" data-code="7.2" data-k="relatórios documentos trabalhadores fornecedores checklist catracas avançar">
+          <span class="step__dot" aria-hidden="true">7.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.2: </span>Selecione o relatório</h3>
+            <p>Em <b>“Análises”</b>, clique em <b>“Relatórios”</b>. Escolha o tipo: documentos, trabalhadores, fornecedores, checklist ou catracas, e clique em <b>“Avançar”</b>.</p><button class="watch" type="button" data-watch="relatorios" data-t="19.56"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:19</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Em “Análises”, clique em “Relatórios”. Escolha o tipo: documentos, trabalhadores, fornecedores, checklist ou catracas, e">
+              <span class="tilt"><img data-img="i7_2" alt="Em “Análises”, clique em “Relatórios”. Escolha o tipo: documentos, trabalhadores, fornecedores, checklist ou catracas, e" width="1600" height="650" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-7-3" data-code="7.3" data-k="gerar relatório pdf xlsx csv período filtros imprimir">
+          <span class="step__dot" aria-hidden="true">7.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.3: </span>Gere o relatório</h3>
+            <p>Escolha o formato do arquivo (PDF, XLSX ou CSV), o período da pesquisa e os demais filtros, como estabelecimentos e fornecedores.</p><p>Clique em <b>“Gerar relatório”</b>. Depois, é só baixar ou imprimir.</p><button class="watch" type="button" data-watch="relatorios" data-t="29.34"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:29</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Escolha o formato do arquivo (PDF, XLSX ou CSV), o período da pesquisa e os demais filtros, como estabelecimentos e forn">
+              <span class="tilt"><img data-img="i7_3" alt="Escolha o formato do arquivo (PDF, XLSX ou CSV), o período da pesquisa e os demais filtros, como estabelecimentos e forn" width="1600" height="1000" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer class="sec dark foot">
+  <div class="wrap foot__in">
+    <div>
+      <img data-img="logo_w" data-now alt="SEIF Santa Catarina" width="101" height="36">
+      <p>Manual de uso do SEIF — Indústria. Edição 2026, atualizada com as telas atuais do sistema.</p>
+    </div>
+    <div>
+      <div class="foot__brands"><img class="brands__sesi" data-img="logo_sesi" alt="SESI" width="470" height="176" loading="lazy" decoding="async"><img class="brands__saude" data-img="logo_saude" alt="SESI Saúde" width="553" height="95" loading="lazy" decoding="async"></div>
+      <small>As imagens e os vídeos usam dados fictícios.</small>
+      <small>SESI Santa Catarina</small>
+    </div>
+  </div>
+</footer>
+
+<dialog class="palette" id="busca" aria-label="Buscar no manual">
+  <div class="palette__in">
+    <svg aria-hidden="true"><use href="#i-busca"/></svg>
+    <input type="search" placeholder="O que você precisa fazer?" aria-label="Buscar no manual" autocomplete="off">
+    <button class="palette__close" type="button" aria-label="Fechar a busca">Esc</button>
+  </div>
+  <div class="palette__res" role="listbox" aria-label="Resultados"></div>
+  <div class="palette__foot"><span>↑ ↓ navegar</span><span>Enter abrir</span><span>Esc fechar</span></div>
+</dialog>
+
+<dialog class="zoom" id="zoom" aria-label="Imagem ampliada">
+  <div class="zoom__bar"><button type="button" data-modo>Tamanho real</button><button type="button" data-fechar>Fechar ✕</button></div>
+  <div class="zoom__stage"><img alt=""></div>
+  <p class="zoom__cap"></p>
+</dialog>
+
+<script>window.IMAGENS = {"logo_w": "assets/img/comum/logo_w.svg", "logo_sesi": "assets/img/comum/logo_sesi.webp", "logo_saude": "assets/img/comum/logo_saude.svg", "capa": "assets/img/comum/capa.webp", "i4_1": "assets/img/industria/i4_1.webp", "i1_1": "assets/img/industria/i1_1.webp", "poster_02": "assets/img/industria/poster_02.webp", "poster_04": "assets/img/industria/poster_04.webp", "i2_4": "assets/img/industria/i2_4.webp", "i3_3": "assets/img/industria/i3_3.webp", "poster_05": "assets/img/industria/poster_05.webp", "i2_6": "assets/img/industria/i2_6.webp", "i3_1": "assets/img/industria/i3_1.webp", "poster_03": "assets/img/industria/poster_03.webp", "i2_3": "assets/img/industria/i2_3.webp", "i1_3": "assets/img/industria/i1_3.webp", "i6_2": "assets/img/industria/i6_2.webp", "i7_3": "assets/img/industria/i7_3.webp", "poster_06": "assets/img/industria/poster_06.webp", "i2_5": "assets/img/industria/i2_5.webp", "i6_1": "assets/img/industria/i6_1.webp", "i2_2": "assets/img/industria/i2_2.webp", "poster_07": "assets/img/industria/poster_07.webp", "poster_01": "assets/img/industria/poster_01.webp", "i2_1": "assets/img/industria/i2_1.webp", "i3_2": "assets/img/industria/i3_2.webp", "i7_2": "assets/img/industria/i7_2.webp", "i4_2": "assets/img/industria/i4_2.webp", "i5_2": "assets/img/industria/i5_2.webp", "i5_3": "assets/img/industria/i5_3.webp", "i5_1": "assets/img/industria/i5_1.webp", "i1_2": "assets/img/industria/i1_2.webp", "i7_1": "assets/img/industria/i7_1.webp", "forn": "assets/img/terceiro/s3_1.webp"};
+window.SUGESTOES = ["habilitação", "matriz", "periodicidade", "fornecedor", "vincular", "usuário", "trabalhador", "notificações", "painel", "relatório"];</script>
+<script src="assets/js/manual.js"></script>
+</body>
+</html>

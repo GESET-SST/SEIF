@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual SEIF — Terceiro (Fornecedor) · 2026</title>
+<meta name="description" content="Passo a passo do SEIF para empresas terceiras (fornecedores): cadastro, trabalhadores, documentos, vínculos e usuários. Edição 2026.">
+<meta name="theme-color" content="#0D6D41">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D6D41'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='34' font-weight='700' text-anchor='middle' fill='%23CAFFDF'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-600-normal.woff2) format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-700-normal.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:Montserrat;src:url(assets/fonts/montserrat-latin-800-normal.woff2) format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(assets/fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(assets/fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+</style>
+<link rel="stylesheet" href="assets/css/manual.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Ícones reutilizados na página -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-busca" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.6v12.8c0 .8.9 1.3 1.6.9l10-6.4c.6-.4.6-1.4 0-1.8l-10-6.4C8.9 4.3 8 4.8 8 5.6z"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6M11 8v6M8 11h6"/></symbol>
+    <symbol id="i-lupa" viewBox="0 0 24 24"><path fill="currentColor" d="M20 19.59V8l-6-6H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c.45 0 .85-.15 1.19-.4l-4.43-4.43c-.8.52-1.74.83-2.76.83-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5c0 1.02-.31 1.96-.83 2.75L20 19.59zM9 13c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/></symbol>
+    <symbol id="i-bloqueado" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></symbol>
+    <symbol id="i-grupo" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="bar">
+  <div class="bar__in">
+    <div class="marks"><a class="mark" href="#inicio" aria-label="SEIF — voltar ao início"><i class="lg lg--seif" data-lg="logo_w" role="img" aria-label="SEIF Santa Catarina"></i></a><b class="marks__sep" aria-hidden="true"></b><i class="lg lg--sesi" data-lg="logo_sesi" role="img" aria-label="SESI"></i><b class="marks__sep" aria-hidden="true"></b><i class="lg lg--saude" data-lg="logo_saude" role="img" aria-label="sesi+saúde"></i><span class="mark__name">Manual do Terceiro</span></div>
+    <nav class="bar__nav" id="menu" aria-label="Capítulos">
+      <a class="only-mobile" href="index.html">← Trocar manual</a>
+      <a href="#cadastro">Cadastro</a>
+      <a href="#trabalhadores">Trabalhadores</a>
+      <a href="#documentos-empresa">Docs. da empresa</a>
+      <a href="#vincular">Vincular</a>
+      <a href="#irregular-empresa">Empresa irregular</a>
+      <a href="#irregular-trabalhadores">Trabalhador irregular</a>
+      <a href="#usuarios">Usuários</a>
+    </nav>
+    <a class="bar__swap" href="index.html" title="Voltar à escolha do manual">Trocar manual</a>
+    <button class="bar__search" type="button" data-busca aria-label="Buscar no manual"><svg aria-hidden="true"><use href="#i-busca"/></svg><span>Buscar</span><kbd>/</kbd></button>
+    <button class="bar__menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+  <i class="bar__progress" aria-hidden="true"></i>
+</header>
+
+<nav class="chapters" aria-label="Atalho para os capítulos">
+  <ol>
+    <li><a href="#inicio"><span>Início</span><i></i></a></li>
+    <li><a href="#cadastro"><span>01 · Cadastro</span><i></i></a></li>
+    <li><a href="#trabalhadores"><span>02 · Trabalhadores</span><i></i></a></li>
+    <li><a href="#documentos-empresa"><span>03 · Docs. da empresa</span><i></i></a></li>
+    <li><a href="#vincular"><span>04 · Vincular</span><i></i></a></li>
+    <li><a href="#irregular-empresa"><span>05 · Empresa irregular</span><i></i></a></li>
+    <li><a href="#irregular-trabalhadores"><span>06 · Trabalhador irregular</span><i></i></a></li>
+    <li><a href="#usuarios"><span>07 · Usuários</span><i></i></a></li>
+  </ol>
+</nav>
+
+<main id="conteudo">
+  <section class="sec dark hero" id="inicio" data-title="Início" aria-label="Apresentação">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow">Terceiro (fornecedor) · Edição 2026</p>
+        <h1><span class="rv"><span>Manual</span></span> <span class="rv"><span>de</span></span> <span class="rv"><span>uso</span></span> <span class="rv"><span>do</span></span> <span class="rv"><span><em>SEIF</em></span></span></h1>
+        <div class="hero__rule"></div>
+        <p class="hero__lede">O passo a passo para cadastrar sua empresa e seus trabalhadores, enviar documentos e resolver pendências na plataforma do SESI.</p>
+        <button class="finder" type="button" data-busca><svg aria-hidden="true"><use href="#i-busca"/></svg><span>O que você precisa fazer? Ex.: cadastrar trabalhador</span><kbd>/</kbd></button>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#cadastro">Começar pelo cadastro</a>
+          <a class="btn" href="#temas">Ver todos os temas</a>
+        </div>
+        <ul class="hero__meta"><li>7 temas</li><li>35 passos</li><li>7 vídeos</li><li>Dados fictícios</li></ul>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="layer screen screen--a" data-depth="0.6"><img data-img="hero_a" alt="" width="1500" height="978" data-now></div>
+        <div class="layer screen screen--b" data-depth="1.3"><img data-img="hero_b" alt="" width="1300" height="868" data-now></div>
+        <div class="layer chipcard" data-depth="2">
+          <small>Situação do estabelecimento</small>
+          <strong>INDÚSTRIA MODELO S.A.</strong>
+          <div class="pills"><span class="pill pill--a">4 vinculados</span><span class="pill pill--r">4 regulares</span><span class="pill pill--i">0 irregulares</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">role<span>↓</span></div>
+  </section>
+
+  <section class="sec" id="sobre" data-title="O que é o SEIF">
+    <div class="wrap">
+      <div class="about">
+        <div class="up">
+          <p class="eyebrow">Sobre a plataforma</p>
+          <h2>O que é o <b>SEIF</b></h2>
+          <p>O SEIF (Segurança e Informação) é uma plataforma do SESI que facilita a gestão de fornecedores em SST (Segurança e Saúde no Trabalho). Consolidando dados dos trabalhadores em uma plataforma única, o SEIF permite que gestores monitorem a segurança em campo e gerem notificações sobre vencimento de documentos. Isso promove maior agilidade, conformidade legal e segurança, fortalecendo a confiança e colaboração entre indústrias, fornecedores e trabalhadores no setor industrial brasileiro.</p>
+          <div class="brands"><img class="brands__sesi" data-img="logo_sesi" alt="SESI" width="470" height="176" loading="lazy" decoding="async"><img class="brands__saude" data-img="logo_saude" alt="SESI Saúde" width="553" height="95" loading="lazy" decoding="async"></div>
+        </div>
+        <figure class="photo up"><img data-img="capa" alt="Trabalhador da indústria consultando o celular" width="1100" height="699" loading="lazy"></figure>
+      </div>
+      <div class="toc" id="temas">
+        <div class="toc__head up">
+          <div><p class="eyebrow">Temas</p><h2>O que você pode <b>fazer no SEIF</b></h2></div>
+          <p>Escolha um tema ou use a busca.</p>
+        </div>
+        <div class="toc__grid">
+        <a class="card up" href="#cadastro"><span class="card__n">01</span><span class="card__t">Como realizar <b>o cadastro na plataforma</b></span><span class="card__m">5 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#trabalhadores"><span class="card__n">02</span><span class="card__t">Como cadastrar <b>trabalhadores</b></span><span class="card__m">4 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#documentos-empresa"><span class="card__n">03</span><span class="card__t">Como enviar documentos <b>da sua empresa</b></span><span class="card__m">4 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#vincular"><span class="card__n">04</span><span class="card__t">Como vincular e enviar <b>documentos de trabalhadores</b></span><span class="card__m">10 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#irregular-empresa"><span class="card__n">05</span><span class="card__t">Situação irregular <b>da empresa fornecedora</b></span><span class="card__m">3 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#irregular-trabalhadores"><span class="card__n">06</span><span class="card__t">Situação irregular <b>de trabalhadores</b></span><span class="card__m">5 passos · vídeo <i>→</i></span></a>
+        <a class="card up" href="#usuarios"><span class="card__n">07</span><span class="card__t">Como cadastrar <b>usuários no sistema</b></span><span class="card__m">4 passos · vídeo <i>→</i></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cadastro" data-title="01 · Como realizar o cadastro na plataforma" aria-labelledby="h-cadastro">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">01</span>
+        <div class="up">
+          <h2 id="h-cadastro">Como realizar <b>o cadastro na plataforma</b></h2>
+          <p class="chap__lede">Do primeiro acesso ao cadastro concluído.</p>
+          <p class="chap__meta">5 passos · vídeo de 1:49</p>
+        </div>
+        <div class="vid up" id="video-cadastro" data-vid="01" data-src="assets/video/terceiro/tema-01.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 01: Como realizar o cadastro na plataforma (1:49)">
+              <img data-img="poster_01" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 1:49</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="4.87"><span class="vid__code">1.1</span><span class="vid__title">Acesse o site</span><span class="vid__time">0:04</span></button></li><li><button type="button" data-t="11.50"><span class="vid__code">1.2</span><span class="vid__title">Faça seu cadastro</span><span class="vid__time">0:11</span></button></li><li><button type="button" data-t="17.20"><span class="vid__code">1.3</span><span class="vid__title">Preencha os campos</span><span class="vid__time">0:17</span></button></li><li><button type="button" data-t="43.13"><span class="vid__code">1.4</span><span class="vid__title">Valide seu cadastro por e-mail</span><span class="vid__time">0:43</span></button></li><li><button type="button" data-t="57.33"><span class="vid__code">1.5</span><span class="vid__title">Complete o cadastro</span><span class="vid__time">0:57</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec ">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-1-1" data-code="1.1" data-k="entrar login acessar endereço site link portal primeiro acesso">
+          <span class="step__dot" aria-hidden="true">1.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.1: </span>Acesse o site</h3>
+            <p>Para ter acesso à plataforma SEIF, você deve realizar o cadastro on-line da sua empresa.</p><p>Acesse o site: <a class="link" href="https://seif.sesi.org.br/login" target="_blank" rel="noopener">seif.sesi.org.br/login</a></p><button class="watch" type="button" data-watch="cadastro" data-t="4.87"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:04</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela de login do SEIF">
+              <span class="tilt"><img data-img="s1_1" alt="Tela de login do SEIF" width="1600" height="962" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-1-2" data-code="1.2" data-k="criar conta registrar cadastro inicial novo fornecedor">
+          <span class="step__dot" aria-hidden="true">1.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.2: </span>Faça seu cadastro</h3>
+            <p>Clique em <b>“Faça seu cadastro no portal”</b> e você será direcionado à página de cadastro inicial dos fornecedores.</p><button class="watch" type="button" data-watch="cadastro" data-t="11.50"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:11</span></button>
+          </div>
+          <figure class="shot up shot--tall">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Link “Faça seu cadastro no portal” na tela de login">
+              <span class="tilt"><img data-img="s1_2" alt="Link “Faça seu cadastro no portal” na tela de login" width="900" height="1207" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-1-3" data-code="1.3" data-k="cnpj razão social nome fantasia email termos formulário">
+          <span class="step__dot" aria-hidden="true">1.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.3: </span>Preencha os campos</h3>
+            <p>Preencha os dados solicitados em tela, aceite os termos e, para finalizar, clique no botão <b>“Finalizar o cadastro”</b>.</p><button class="watch" type="button" data-watch="cadastro" data-t="17.20"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:17</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Formulário de cadastro inicial do fornecedor preenchido">
+              <span class="tilt"><img data-img="s1_3" alt="Formulário de cadastro inicial do fornecedor preenchido" width="1600" height="962" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-1-4" data-code="1.4" data-k="confirmar validar email link não recebi reenviar">
+          <span class="step__dot" aria-hidden="true">1.4</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.4: </span>Valide seu cadastro por e-mail</h3>
+            <p>Um link de validação foi enviado ao seu e-mail cadastrado. Clique no link para confirmar seu cadastro.</p><button class="watch" type="button" data-watch="cadastro" data-t="43.13"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:43</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela “Verifique seu e-mail”">
+              <span class="tilt"><img data-img="s1_4" alt="Tela “Verifique seu e-mail”" width="1600" height="962" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-1-5" data-code="1.5" data-k="senha usuário responsável endereço cnae cep concluir">
+          <span class="step__dot" aria-hidden="true">1.5</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 1.5: </span>Complete o cadastro</h3>
+            <p>Ao clicar no link recebido por e-mail, você será direcionado para finalizar o cadastro.</p><p>Preencha os dados do usuário responsável, crie sua senha, complete as informações e o endereço da empresa e clique em <b>“Concluir cadastro”</b>.</p><button class="watch" type="button" data-watch="cadastro" data-t="57.33"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:57</span></button>
+          </div>
+          <figure class="shot up shot--tall">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela “Finalize o cadastro” preenchida">
+              <span class="tilt"><img data-img="s1_5" alt="Tela “Finalize o cadastro” preenchida" width="1100" height="1219" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="trabalhadores" data-title="02 · Como cadastrar trabalhadores" aria-labelledby="h-trabalhadores">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">02</span>
+        <div class="up">
+          <h2 id="h-trabalhadores">Como cadastrar <b>trabalhadores</b></h2>
+          <p class="chap__lede">Um por um ou vários de uma vez, por planilha.</p>
+          <p class="chap__meta">4 passos · vídeo de 1:56</p>
+        </div>
+        <div class="vid up" id="video-trabalhadores" data-vid="02" data-src="assets/video/terceiro/tema-02.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 02: Como cadastrar trabalhadores (1:56)">
+              <img data-img="poster_02" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 1:56</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.03"><span class="vid__code">2.1</span><span class="vid__title">Acesse o menu “Trabalhadores”</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="7.93"><span class="vid__code">2.2</span><span class="vid__title">Adicionar trabalhadores</span><span class="vid__time">0:07</span></button></li><li><button type="button" data-t="17.87"><span class="vid__code">2.3</span><span class="vid__title">Cadastrando trabalhadores manualmente</span><span class="vid__time">0:17</span></button></li><li><button type="button" data-t="82.80"><span class="vid__code">2.4</span><span class="vid__title">Cadastrando trabalhadores com uma planilha</span><span class="vid__time">1:22</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec soft">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-2-1" data-code="2.1" data-k="funcionário colaborador menu">
+          <span class="step__dot" aria-hidden="true">2.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.1: </span>Acesse o menu “Trabalhadores”</h3>
+            <p>Para cadastrar um trabalhador no sistema, acesse o menu lateral e selecione a opção <b>“Trabalhadores”</b>.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="2.66"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:02</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Menu lateral com a opção Trabalhadores">
+              <span class="tilt"><img data-img="s2_1" alt="Menu lateral com a opção Trabalhadores" width="1000" height="915" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-2" data-code="2.2" data-k="novo funcionário adicionar incluir">
+          <span class="step__dot" aria-hidden="true">2.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.2: </span>Adicionar trabalhadores</h3>
+            <p>Na seção <b>“Ver trabalhadores”</b>, clique no botão <b>“Adicionar trabalhadores”</b>.</p><p>Essa opção permite cadastrar trabalhadores de forma manual ou por meio de uma planilha.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="7.93"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:07</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Botão “Adicionar trabalhadores” aberto com as opções">
+              <span class="tilt"><img data-img="s2_2" alt="Botão “Adicionar trabalhadores” aberto com as opções" width="1400" height="1284" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-3" data-code="2.3" data-k="cpf contrato informações pessoais manual funcionário">
+          <span class="step__dot" aria-hidden="true">2.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.3: </span>Cadastrando trabalhadores manualmente</h3>
+            <p>Após clicar em <b>“Cadastrar trabalhador”</b>, informe o CPF e clique em <b>“Validar e continuar”</b>.</p><p>Em seguida, preencha o <b>“Contrato”</b> e clique em <b>“Salvar”</b>.</p><p>Por fim, complete as <b>“Informações pessoais”</b> e clique em <b>“Continuar”</b> para concluir o cadastro.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="17.87"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:17</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Etapa de validação de CPF do cadastro de trabalhador">
+              <span class="tilt"><img data-img="s2_3" alt="Etapa de validação de CPF do cadastro de trabalhador" width="1600" height="742" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-2-4" data-code="2.4" data-k="excel xlsx importar vários lote em massa funcionários">
+          <span class="step__dot" aria-hidden="true">2.4</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 2.4: </span>Cadastrando trabalhadores com uma planilha</h3>
+            <p>Em <b>“Adicionar trabalhadores”</b>, selecione <b>“Importar planilha”</b>.</p><p>Baixe a planilha modelo e siga as instruções da tela.</p><p>Com a planilha pronta, clique em <b>“selecione um arquivo”</b> para fazer o upload. A importação é automática e, se houver erros, o sistema mostra o que corrigir.</p><button class="watch" type="button" data-watch="trabalhadores" data-t="82.80"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>1:22</span></button>
+          </div>
+          <figure class="shot up shot--tall">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela de importação de planilha">
+              <span class="tilt"><img data-img="s2_4" alt="Tela de importação de planilha" width="1000" height="1938" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="documentos-empresa" data-title="03 · Como enviar documentos da sua empresa" aria-labelledby="h-documentos-empresa">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">03</span>
+        <div class="up">
+          <h2 id="h-documentos-empresa">Como enviar documentos <b>da sua empresa</b></h2>
+          <p class="chap__lede">Os documentos da pessoa jurídica (CNPJ), por estabelecimento.</p>
+          <p class="chap__meta">4 passos · vídeo de 1:15</p>
+        </div>
+        <div class="vid up" id="video-documentos-empresa" data-vid="03" data-src="assets/video/terceiro/tema-03.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 03: Como enviar documentos da sua empresa (1:15)">
+              <img data-img="poster_03" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 1:15</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="9.23"><span class="vid__code">3.1</span><span class="vid__title">Vinculação à empresa parceira</span><span class="vid__time">0:09</span></button></li><li><button type="button" data-t="4.07"><span class="vid__code">3.2</span><span class="vid__title">Acessando a área de envio</span><span class="vid__time">0:04</span></button></li><li><button type="button" data-t="24.27"><span class="vid__code">3.3</span><span class="vid__title">Selecionando a categoria de trabalho</span><span class="vid__time">0:24</span></button></li><li><button type="button" data-t="38.63"><span class="vid__code">3.4</span><span class="vid__title">Fazendo upload e enviando para aprovação</span><span class="vid__time">0:38</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec ">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-3-1" data-code="3.1" data-k="empresa parceira contratante estabelecimento vínculo">
+          <span class="step__dot" aria-hidden="true">3.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.1: </span>Vinculação à empresa parceira</h3>
+            <p>Para enviar seus documentos para uma empresa parceira, sua empresa precisa estar vinculada a um estabelecimento dessa indústria parceira.</p><button class="watch" type="button" data-watch="documentos-empresa" data-t="9.23"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:09</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Lista de estabelecimentos">
+              <span class="tilt"><img data-img="s3_1" alt="Lista de estabelecimentos" width="1600" height="1068" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-3-2" data-code="3.2" data-k="meus documentos vincular enviar documentos da empresa cnpj">
+          <span class="step__dot" aria-hidden="true">3.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.2: </span>Acessando a área de envio</h3>
+            <p>Acesse o menu lateral e selecione a opção <b>“Estabelecimentos”</b>.</p><p>No estabelecimento desejado, clique em <b>“Vincular”</b> e selecione <b>“Meus Documentos”</b>.</p><button class="watch" type="button" data-watch="documentos-empresa" data-t="4.07"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:04</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Menu “Vincular” aberto com a opção Meus Documentos">
+              <span class="tilt"><img data-img="s3_2" alt="Menu “Vincular” aberto com a opção Meus Documentos" width="1600" height="1068" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-3-3" data-code="3.3" data-k="categoria tipo de trabalho adicionar documentos fornecedor primeira vez">
+          <span class="step__dot" aria-hidden="true">3.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.3: </span>Selecionando a categoria de trabalho</h3>
+            <p>Na tela <b>“Adicionar documentos fornecedor”</b>, escolha no campo <b>“Selecionar categoria”</b> a categoria de trabalho predefinida pela indústria parceira.</p><button class="watch" type="button" data-watch="documentos-empresa" data-t="24.27"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:24</span></button><div class="note"><strong>Importante</strong><p>A categoria deve corresponder às suas atividades de trabalho para que os documentos corretos sejam disponibilizados para envio.</p></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela “Adicionar documentos fornecedor” com o campo “Selecionar categoria” aberto">
+              <span class="tilt"><img data-img="s3_3" alt="Tela “Adicionar documentos fornecedor” com o campo “Selecionar categoria” aberto" width="1500" height="1360" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-3-4" data-code="3.4" data-k="upload anexar arquivo pgr pcmso data de emissão enviar para aprovação editar documentos salvar alterações">
+          <span class="step__dot" aria-hidden="true">3.4</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 3.4: </span>Fazendo upload e enviando para aprovação</h3>
+            <p>Após selecionar a categoria, envie cada documento, informe a <b>“Data de emissão”</b> e clique em <b>“Enviar para aprovação”</b>.</p><p>Nos próximos envios para o mesmo estabelecimento, a tela será <b>“Editar Documentos”</b> e o botão, <b>“Salvar alterações”</b> (veja o tema 05).</p><button class="watch" type="button" data-watch="documentos-empresa" data-t="38.63"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:38</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Documentos anexados com data de emissão e o botão “Enviar para aprovação”">
+              <span class="tilt"><img data-img="s3_4" alt="Documentos anexados com data de emissão e o botão “Enviar para aprovação”" width="1600" height="1066" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="vincular" data-title="04 · Como vincular e enviar documentos de trabalhadores" aria-labelledby="h-vincular">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">04</span>
+        <div class="up">
+          <h2 id="h-vincular">Como vincular e enviar <b>documentos de trabalhadores</b></h2>
+          <p class="chap__lede">Vincule trabalhadores a um estabelecimento e envie os documentos de cada um.</p>
+          <p class="chap__meta">10 passos · vídeo de 2:06</p>
+        </div>
+        <div class="vid up" id="video-vincular" data-vid="04" data-src="assets/video/terceiro/tema-04.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 04: Como vincular e enviar documentos de trabalhadores (2:06)">
+              <img data-img="poster_04" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 2:06</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="4.67"><span class="vid__code">4.1</span><span class="vid__title">Acesse o menu “Estabelecimentos”</span><span class="vid__time">0:04</span></button></li><li><button type="button" data-t="9.73"><span class="vid__code">4.2</span><span class="vid__title">Vincular trabalhadores</span><span class="vid__time">0:09</span></button></li><li><button type="button" data-t="24.33"><span class="vid__code">4.3</span><span class="vid__title">Selecionando os trabalhadores</span><span class="vid__time">0:24</span></button></li><li><button type="button" data-t="34.87"><span class="vid__code">4.4</span><span class="vid__title">Selecione os trabalhadores</span><span class="vid__time">0:34</span></button></li><li><button type="button" data-t="54.47"><span class="vid__code">4.5</span><span class="vid__title">Upload de documentos</span><span class="vid__time">0:54</span></button></li><li><button type="button" data-t="61.03"><span class="vid__code">4.6</span><span class="vid__title">Envie os documentos</span><span class="vid__time">1:01</span></button></li><li><button type="button" data-t="111.97"><span class="vid__code">4.7</span><span class="vid__title">Revisão e envio para aprovação</span><span class="vid__time">1:51</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios. Os passos 4.6.1 a 4.6.3 estão só nas imagens, logo abaixo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec soft">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-4-1" data-code="4.1" data-k="estabelecimentos vincular funcionários">
+          <span class="step__dot" aria-hidden="true">4.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.1: </span>Acesse o menu “Estabelecimentos”</h3>
+            <p>Para vincular e enviar documentos de trabalhadores a um estabelecimento, acesse o menu lateral e selecione a opção <b>“Estabelecimentos”</b>.</p><button class="watch" type="button" data-watch="vincular" data-t="4.67"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:04</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Menu lateral com Estabelecimentos selecionado">
+              <span class="tilt"><img data-img="s4_1" alt="Menu lateral com Estabelecimentos selecionado" width="1400" height="1385" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-4-2" data-code="4.2" data-k="botão desabilitado bloqueado habilitado pgr pcmso">
+          <span class="step__dot" aria-hidden="true">4.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.2: </span>Vincular trabalhadores</h3>
+            <p>No estabelecimento desejado, clique no botão <b>“Vincular trabalhadores”</b> para iniciar o vínculo.</p><button class="watch" type="button" data-watch="vincular" data-t="9.73"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:09</span></button><div class="warn"><p>O botão “Vincular trabalhadores” será habilitado somente após a aprovação, pela CONTRATANTE, dos documentos exigidos da pessoa jurídica (CNPJ), tais como PGR e PCMSO.</p></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Botão “Vincular trabalhadores” no estabelecimento">
+              <span class="tilt"><img data-img="s4_2" alt="Botão “Vincular trabalhadores” no estabelecimento" width="1600" height="1068" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-4-3" data-code="4.3" data-k="selecionar funcionários colunas setas vincular selecionados">
+          <span class="step__dot" aria-hidden="true">4.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.3: </span>Selecionando os trabalhadores</h3>
+            <p>No topo da página, será exibida uma linha do tempo com os passos para efetuar o vínculo.</p><button class="watch" type="button" data-watch="vincular" data-t="24.33"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:24</span></button><div class="sub" id="passo-4-4"><span class="sub__n">4.4</span><div class="sub__b"><h4>Selecione os trabalhadores</h4><ul><li>Escolha os trabalhadores a serem vinculados na coluna da esquerda.</li><li>Selecione individualmente, clicando em cada um, ou todos, usando a caixa de seleção.</li><li>Mova os selecionados para a coluna da direita usando as setas.</li><li>Clique no botão <b>“Vincular selecionados”</b> para prosseguir.</li></ul><button class="watch" type="button" data-watch="vincular" data-t="34.87"><svg aria-hidden="true"><use href="#i-play"/></svg>No vídeo <span>0:34</span></button></div></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Etapa “Selecionar trabalhadores” com as duas colunas">
+              <span class="tilt"><img data-img="s4_3" alt="Etapa “Selecionar trabalhadores” com as duas colunas" width="1500" height="1452" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-4-5" data-code="4.5" data-k="aso documentos do trabalhador upload anexar atividade específica próximo trabalhador">
+          <span class="step__dot" aria-hidden="true">4.5</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.5: </span>Upload de documentos</h3>
+            <p>Verifique a lista de documentos solicitados para cada trabalhador.</p><button class="watch" type="button" data-watch="vincular" data-t="54.47"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:54</span></button><div class="sub" id="passo-4-6"><span class="sub__n">4.6</span><div class="sub__b"><h4>Envie os documentos</h4><ul><li>Faça o upload de cada documento e informe a data de emissão.</li><li>Se houver atividade específica, marque <b>“Sim”</b> e selecione a atividade.</li><li>Envie os documentos adicionais exigidos para essa atividade.</li><li>Clique em <b>“Próximo trabalhador”</b> para seguir e, no último, em <b>“Confirmar dados”</b>.</li></ul><button class="watch" type="button" data-watch="vincular" data-t="61.03"><svg aria-hidden="true"><use href="#i-play"/></svg>No vídeo <span>1:01</span></button></div></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Etapa “Selecionar documentos” com o envio do ASO">
+              <span class="tilt"><img data-img="s4_5" alt="Etapa “Selecionar documentos” com o envio do ASO" width="1500" height="1436" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step step--multi" id="passo-4-6-1" data-code="4.6.1" data-k="lupa pesquisar pesquisa buscar procurar documento existente já enviado banco de dados selecionar arquivo existente reaproveitar reutilizar anexar de novo">
+          <span class="step__dot step__dot--long" aria-hidden="true">4.6.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.6.1: </span>Lupa: documento já enviado</h3>
+            <p>O documento já está no SEIF? A <b>lupa</b> ao lado do campo mostra os arquivos desse tipo já enviados. Não é preciso anexar de novo.</p><div class="sub"><span class="sub__n"><svg aria-hidden="true"><use href="#i-lupa"/></svg></span><div class="sub__b"><h4>Selecione o arquivo existente</h4><ul><li>Clique na <b>lupa</b>, ao lado de “Clique para adicionar”.</li><li>Marque o arquivo na janela <b>“Selecionar documento”</b> e clique em <b>“Selecionar”</b>.</li><li>Informe a <b>“Data de emissão”</b>: ela não vem preenchida.</li><li>Lista vazia? Anexe o arquivo. Sem todos os documentos, o SEIF não avança nem salva rascunho.</li></ul></div></div>
+          </div>
+          <div class="shots">
+            <figure class="shot up">
+              <p class="shot__label">A lupa abre a janela “Selecionar documento”</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Lupa ao lado do campo do ASO e janela “Selecionar documento” com os arquivos já enviados">
+                <span class="tilt"><img data-img="s4_6_1" alt="Lupa ao lado do campo do ASO e janela “Selecionar documento” com os arquivos já enviados" width="1500" height="1493" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+            <figure class="shot up">
+              <p class="shot__label">Depois de selecionar, informe a data de emissão</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Arquivo selecionado no campo do ASO e o campo “Data de emissão” ainda vazio">
+                <span class="tilt"><img data-img="s4_6_1b" alt="Arquivo selecionado no campo do ASO e o campo “Data de emissão” ainda vazio" width="1500" height="292" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li class="step step--multi" id="passo-4-6-2" data-code="4.6.2" data-k="funcionário subcontratado subcontratada terceirizado bloqueado bloqueio proibido pendência não consigo vincular trabalhador não seleciona habilitações de subcontratada contrato">
+          <span class="step__dot step__dot--long" aria-hidden="true">4.6.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.6.2: </span>Trabalhador subcontratado</h3>
+            <p>O ícone <svg class="ico" aria-hidden="true"><use href="#i-bloqueado"/></svg><span class="vh"> de bloqueio</span> na lista indica <b>pendência de aprovação de documentos de subcontratada</b>: esse trabalhador ainda não pode ser vinculado.</p><div class="sub"><span class="sub__n"><svg aria-hidden="true"><use href="#i-bloqueado"/></svg></span><div class="sub__b"><h4>Para liberar o vínculo</h4><ul><li>Isso vale para quem foi cadastrado com o contrato <b>“Subcontratada”</b> (<a class="link" href="#passo-2-3">passo 2.3</a>).</li><li>Envie os documentos da subcontratada (<a class="link" href="#passo-4-6-3">passo 4.6.3</a>) e aguarde a aprovação da empresa parceira.</li><li>Depois da aprovação, selecione o trabalhador e siga o vínculo normalmente.</li><li>No envio de documentos, anexe também as <b>“Habilitações de subcontratada”</b>, se aparecerem.</li></ul></div></div>
+          </div>
+          <div class="shots">
+            <figure class="shot up">
+              <p class="shot__label">Na seleção, o subcontratado com pendência fica bloqueado</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Lista de trabalhadores com um subcontratado bloqueado e a legenda “Pendência de aprovação de documentos de subcontratada”">
+                <span class="tilt"><img data-img="s4_6_2" alt="Lista de trabalhadores com um subcontratado bloqueado e a legenda “Pendência de aprovação de documentos de subcontratada”" width="1500" height="1454" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+            <figure class="shot up">
+              <p class="shot__label">No cadastro do trabalhador, o contrato “Subcontratada”</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Etapa “Contrato” do cadastro do trabalhador com o tipo “Subcontratada”, o CNPJ e o nome da subcontratada">
+                <span class="tilt"><img data-img="s4_6_2b" alt="Etapa “Contrato” do cadastro do trabalhador com o tipo “Subcontratada”, o CNPJ e o nome da subcontratada" width="1500" height="862" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+            <figure class="shot up">
+              <p class="shot__label">No envio de documentos, as “Habilitações de subcontratada”</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Bloco “Habilitações de subcontratada” na etapa de documentos do trabalhador">
+                <span class="tilt"><img data-img="s4_6_2c" alt="Bloco “Habilitações de subcontratada” na etapa de documentos do trabalhador" width="1500" height="580" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li class="step step--multi" id="passo-4-6-3" data-code="4.6.3" data-k="subcontratada subcontratadas documentos da subcontratada empresa terceirizada vincular enviar para aprovação cnpj categoria pgr">
+          <span class="step__dot step__dot--long" aria-hidden="true">4.6.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.6.3: </span>Documentos da subcontratada</h3>
+            <p><b>“Subcontratada”</b> aparece no menu <b>“Vincular”</b> quando os documentos da sua empresa já foram aprovados e a empresa parceira exige documentos de subcontratadas.</p><div class="sub"><span class="sub__n"><svg aria-hidden="true"><use href="#i-grupo"/></svg></span><div class="sub__b"><h4>Envie os documentos</h4><ul><li>Em <b>“Estabelecimentos”</b>, clique em <b>“Vincular”</b> e depois em <b>“Subcontratada”</b>.</li><li>Escolha a subcontratada (a mesma do cadastro do trabalhador) e a categoria.</li><li>Anexe os documentos, informe as datas de emissão e clique em <b>“Enviar para aprovação”</b>.</li><li>A lupa (<a class="link" href="#passo-4-6-1">passo 4.6.1</a>) também funciona nesta tela.</li></ul></div></div>
+          </div>
+          <div class="shots">
+            <figure class="shot up">
+              <p class="shot__label">Em “Vincular”, escolha “Subcontratada”</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Menu “Vincular” aberto com a opção “Subcontratada”">
+                <span class="tilt"><img data-img="s4_6_3a" alt="Menu “Vincular” aberto com a opção “Subcontratada”" width="1500" height="273" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+            <figure class="shot up">
+              <p class="shot__label">Escolha a subcontratada e a categoria, anexe e envie</p>
+              <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela “Adicionar documentos subcontratadas” preenchida, com o botão “Enviar para aprovação”">
+                <span class="tilt"><img data-img="s4_6_3" alt="Tela “Adicionar documentos subcontratadas” preenchida, com o botão “Enviar para aprovação”" width="1500" height="1202" loading="lazy" decoding="async"></span>
+              </button>
+              <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+            </figure>
+          </div>
+        </li>
+        <li class="step" id="passo-4-7" data-code="4.7" data-k="enviar para aprovação revisar confirmar rascunho salvar depois continuar histórico">
+          <span class="step__dot" aria-hidden="true">4.7</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 4.7: </span>Revisão e envio para aprovação</h3>
+            <p>Revise a lista e clique em <b>“Enviar para aprovação”</b> para finalizar o processo. Depois disso, é só aguardar a aprovação da empresa parceira.</p><button class="watch" type="button" data-watch="vincular" data-t="88.55"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>1:28</span></button><div class="drafts"><h4>Salvando em rascunho</h4><p>Durante o processo, você pode salvar um rascunho e continuar mais tarde: basta clicar em <b>“Salvar rascunho”</b>.</p><p style="margin-top:12px"><b>Para continuar um rascunho:</b></p><ol><li><span>Acesse o menu lateral <b>“Estabelecimentos”</b>;</span></li><li><span>Selecione a opção <b>“Ver histórico”</b>;</span></li><li><span>Clique em <b>“Rascunho”</b>;</span></li><li><span>Filtre pelo estabelecimento em que deseja continuar o processo;</span></li><li><span>Marque os rascunhos que deseja concluir;</span></li><li><span>Clique no botão <b>“Editar todos”</b>;</span></li><li><span>Conclua o vínculo dos trabalhadores.</span></li></ol></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Etapa “Confirmar dados” (exemplo ilustrativo)">
+              <span class="tilt"><img data-img="s4_7" alt="Etapa “Confirmar dados” (exemplo ilustrativo)" width="1600" height="1136" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="irregular-empresa" data-title="05 · Situação irregular da empresa fornecedora" aria-labelledby="h-irregular-empresa">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">05</span>
+        <div class="up">
+          <h2 id="h-irregular-empresa">Situação irregular <b>da empresa fornecedora</b></h2>
+          <p class="chap__lede">Como encontrar e atualizar documentos da empresa que não estão regulares.</p>
+          <p class="chap__meta">3 passos · vídeo de 0:58</p>
+        </div>
+        <div class="vid up" id="video-irregular-empresa" data-vid="05" data-src="assets/video/terceiro/tema-05.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 05: Situação irregular da empresa fornecedora (0:58)">
+              <img data-img="poster_05" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:58</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.67"><span class="vid__code">5.1</span><span class="vid__title">Acesse os documentos da empresa</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="13.03"><span class="vid__code">5.2</span><span class="vid__title">Estabelecimento com documentos irregulares</span><span class="vid__time">0:13</span></button></li><li><button type="button" data-t="26.80"><span class="vid__code">5.3</span><span class="vid__title">Editando documentos</span><span class="vid__time">0:26</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec ">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-5-1" data-code="5.1" data-k="dados empresariais documentos da empresa">
+          <span class="step__dot" aria-hidden="true">5.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 5.1: </span>Acesse os documentos da empresa</h3>
+            <p>No menu lateral, selecione a opção <b>“Dados Empresariais”</b> e, em seguida, clique em <b>“Documentos”</b>.</p><button class="watch" type="button" data-watch="irregular-empresa" data-t="3.67"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Dados Empresariais com a aba Documentos">
+              <span class="tilt"><img data-img="s5_1" alt="Dados Empresariais com a aba Documentos" width="1400" height="922" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-5-2" data-code="5.2" data-k="irregular vencido vencimento pendente situação">
+          <span class="step__dot" aria-hidden="true">5.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 5.2: </span>Estabelecimento com documentos irregulares</h3>
+            <p>Na aba <b>“Documentos”</b>, abra o estabelecimento e confira a coluna <b>“Situação”</b>.</p><p>Os documentos que não estiverem como <b>“Regular”</b> (por exemplo, <b>“Vencimento”</b>) precisam ser atualizados.</p><button class="watch" type="button" data-watch="irregular-empresa" data-t="13.03"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:13</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Coluna Situação na lista de documentos">
+              <span class="tilt"><img data-img="s5_2" alt="Coluna Situação na lista de documentos" width="1600" height="1148" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-5-3" data-code="5.3" data-k="atualizar documento vencido editar substituir">
+          <span class="step__dot" aria-hidden="true">5.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 5.3: </span>Editando documentos</h3>
+            <p>Para o estabelecimento em questão, clique no botão <b>“Editar documentos”</b>.</p><p>Localize o documento que precisa ser atualizado e faça as alterações necessárias. Depois, clique no botão <b>“Salvar alterações”</b> para finalizar o processo.</p><button class="watch" type="button" data-watch="irregular-empresa" data-t="26.80"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:26</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela de edição dos documentos da empresa">
+              <span class="tilt"><img data-img="s5_3" alt="Tela de edição dos documentos da empresa" width="1600" height="976" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="irregular-trabalhadores" data-title="06 · Situação irregular de trabalhadores" aria-labelledby="h-irregular-trabalhadores">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">06</span>
+        <div class="up">
+          <h2 id="h-irregular-trabalhadores">Situação irregular <b>de trabalhadores</b></h2>
+          <p class="chap__lede">Como encontrar trabalhadores com pendências e atualizar os documentos deles.</p>
+          <p class="chap__meta">5 passos · vídeo de 1:10</p>
+        </div>
+        <div class="vid up" id="video-irregular-trabalhadores" data-vid="06" data-src="assets/video/terceiro/tema-06.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 06: Situação irregular de trabalhadores (1:10)">
+              <img data-img="poster_06" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 1:10</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.97"><span class="vid__code">6.1</span><span class="vid__title">Acesse o menu “Trabalhadores”</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="16.17"><span class="vid__code">6.2</span><span class="vid__title">Edite o trabalhador</span><span class="vid__time">0:16</span></button></li><li><button type="button" data-t="20.83"><span class="vid__code">6.3</span><span class="vid__title">Acesse os documentos do trabalhador</span><span class="vid__time">0:20</span></button></li><li><button type="button" data-t="34.37"><span class="vid__code">6.4</span><span class="vid__title">Clique em “Editar documentos”</span><span class="vid__time">0:34</span></button></li><li><button type="button" data-t="45.37"><span class="vid__code">6.5</span><span class="vid__title">Atualize o documento irregular</span><span class="vid__time">0:45</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec soft">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-6-1" data-code="6.1" data-k="funcionário irregular pendência lápis editar trabalhador">
+          <span class="step__dot" aria-hidden="true">6.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 6.1: </span>Acesse o menu “Trabalhadores”</h3>
+            <p>Na tabela você encontrará quantos trabalhadores irregulares a empresa possui.</p><p>Clique na aba <b>“Irregulares”</b> para filtrar todos os trabalhadores com documentos em situação irregular.</p><button class="watch" type="button" data-watch="irregular-trabalhadores" data-t="3.97"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:03</span></button><div class="sub" id="passo-6-2"><span class="sub__n">6.2</span><div class="sub__b"><h4>Edite o trabalhador</h4><p>Clique no ícone de edição (lápis) ao lado do trabalhador em situação irregular.</p><button class="watch" type="button" data-watch="irregular-trabalhadores" data-t="16.17"><svg aria-hidden="true"><use href="#i-play"/></svg>No vídeo <span>0:16</span></button></div></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Lista de trabalhadores com a aba Irregulares">
+              <span class="tilt"><img data-img="s6_1" alt="Lista de trabalhadores com a aba Irregulares" width="1600" height="1043" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-6-3" data-code="6.3" data-k="contratos documentos vigentes editar contrato editar documentos">
+          <span class="step__dot" aria-hidden="true">6.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 6.3: </span>Acesse os documentos do trabalhador</h3>
+            <p>Na tela de edição do trabalhador, acesse a aba <b>“Contratos”</b>, clique no ícone de lápis (<b>“Editar contrato”</b>) e abra a aba <b>“Documentos vigentes”</b>.</p><button class="watch" type="button" data-watch="irregular-trabalhadores" data-t="20.83"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:20</span></button><div class="sub" id="passo-6-4"><span class="sub__n">6.4</span><div class="sub__b"><h4>Clique em “Editar documentos”</h4><p>No estabelecimento desejado, clique no botão <b>“Editar documentos”</b>.</p><button class="watch" type="button" data-watch="irregular-trabalhadores" data-t="34.37"><svg aria-hidden="true"><use href="#i-play"/></svg>No vídeo <span>0:34</span></button></div></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Aba Documentos vigentes do contrato">
+              <span class="tilt"><img data-img="s6_3" alt="Aba Documentos vigentes do contrato" width="1600" height="1179" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-6-5" data-code="6.5" data-k="atualizar documento do trabalhador aso vencido">
+          <span class="step__dot" aria-hidden="true">6.5</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 6.5: </span>Atualize o documento irregular</h3>
+            <p>Na página de edição, localize o documento que precisa ser atualizado, envie o novo arquivo, informe a data de emissão e clique em <b>“Salvar alterações”</b>.</p><button class="watch" type="button" data-watch="irregular-trabalhadores" data-t="45.37"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:45</span></button>
+          </div>
+          <figure class="shot up shot--tall">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Tela de edição dos documentos do trabalhador">
+              <span class="tilt"><img data-img="s6_5" alt="Tela de edição dos documentos do trabalhador" width="1200" height="1424" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="usuarios" data-title="07 · Como cadastrar usuários no sistema" aria-labelledby="h-usuarios">
+    <div class="sec dark chap">
+      <div class="wrap chap__in">
+        <span class="outline-word" aria-hidden="true">07</span>
+        <div class="up">
+          <h2 id="h-usuarios">Como cadastrar <b>usuários no sistema</b></h2>
+          <p class="chap__lede">Dê acesso a outras pessoas da sua empresa.</p>
+          <p class="chap__meta">4 passos · vídeo de 0:48</p>
+        </div>
+        <div class="vid up" id="video-usuarios" data-vid="07" data-src="assets/video/terceiro/tema-07.mp4">
+          <div class="vid__screen">
+            <button class="vid__start" type="button" aria-label="Assistir ao vídeo do tema 07: Como cadastrar usuários no sistema (0:48)">
+              <img data-img="poster_07" alt="" width="960" height="600" loading="lazy" decoding="async">
+              <span class="vid__play" aria-hidden="true"><svg><use href="#i-play"/></svg></span>
+              <span class="vid__badge">Vídeo · 0:48</span>
+            </button>
+          </div>
+          <div class="vid__side">
+            <p class="eyebrow">Assista ao passo a passo</p>
+            <ol class="vid__steps"><li><button type="button" data-t="3.03"><span class="vid__code">7.1</span><span class="vid__title">Acesse o menu “Usuários”</span><span class="vid__time">0:03</span></button></li><li><button type="button" data-t="10.50"><span class="vid__code">7.2</span><span class="vid__title">Cadastrar usuário</span><span class="vid__time">0:10</span></button></li><li><button type="button" data-t="15.50"><span class="vid__code">7.3</span><span class="vid__title">Preencha as informações gerais</span><span class="vid__time">0:15</span></button></li><li><button type="button" data-t="26.93"><span class="vid__code">7.4</span><span class="vid__title">Escolha o perfil adequado para o novo usuário</span><span class="vid__time">0:26</span></button></li></ol>
+            <p class="vid__note">Com narração e legendas. Gravado com dados fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sec ">
+      <div class="wrap">
+        <div class="steps">
+          <span class="steps__line" aria-hidden="true"><i></i></span>
+          <ol>
+        <li class="step" id="passo-7-1" data-code="7.1" data-k="usuários acesso admin">
+          <span class="step__dot" aria-hidden="true">7.1</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.1: </span>Acesse o menu “Usuários”</h3>
+            <p>No menu lateral, selecione a opção <b>“Usuários”</b>.</p><button class="watch" type="button" data-watch="usuarios" data-t="2.66"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:02</span></button><div class="note"><strong>Importante</strong><p>A função de adicionar um novo usuário está disponível apenas para usuários com o perfil <b>Admin Fornecedor</b>.</p></div>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Menu lateral com a opção Usuários">
+              <span class="tilt"><img data-img="s7_1" alt="Menu lateral com a opção Usuários" width="1000" height="959" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-7-2" data-code="7.2" data-k="novo usuário cadastrar usuário">
+          <span class="step__dot" aria-hidden="true">7.2</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.2: </span>Cadastrar usuário</h3>
+            <p>Na tela de <b>“Usuários”</b>, clique no botão <b>“Cadastrar Usuário”</b>.</p><button class="watch" type="button" data-watch="usuarios" data-t="10.50"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:10</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Botão “Cadastrar Usuário”">
+              <span class="tilt"><img data-img="s7_2" alt="Botão “Cadastrar Usuário”" width="1000" height="959" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-7-3" data-code="7.3" data-k="nome cpf email perfil salvar usuário">
+          <span class="step__dot" aria-hidden="true">7.3</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.3: </span>Preencha as informações gerais</h3>
+            <p>Na tela de cadastro, informe os dados do novo usuário: nome completo, CPF, e-mail e perfil. Depois, clique em <b>“Salvar usuário”</b>.</p><button class="watch" type="button" data-watch="usuarios" data-t="15.50"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:15</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Formulário de cadastro de usuário preenchido">
+              <span class="tilt"><img data-img="s7_3" alt="Formulário de cadastro de usuário preenchido" width="1600" height="859" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+        <li class="step" id="passo-7-4" data-code="7.4" data-k="perfil admin fornecedor sst fornecedor permissão acesso">
+          <span class="step__dot" aria-hidden="true">7.4</span>
+          <div class="step__text up">
+            <h3><span class="vh">Passo 7.4: </span>Escolha o perfil adequado para o novo usuário</h3>
+            <p><b>Admin Fornecedor:</b> acesso total à plataforma, podendo atualizar dados da empresa e criar outros usuários com o mesmo perfil.</p><p><b>SST Fornecedor:</b> acesso focado na atualização de documentos.</p><button class="watch" type="button" data-watch="usuarios" data-t="26.93"><svg aria-hidden="true"><use href="#i-play"/></svg>Ver este passo no vídeo <span>0:26</span></button>
+          </div>
+          <figure class="shot up">
+            <button class="shot__btn" type="button" data-zoom aria-label="Ampliar imagem: Lista de perfis disponíveis">
+              <span class="tilt"><img data-img="s7_4" alt="Lista de perfis disponíveis" width="1600" height="859" loading="lazy" decoding="async"></span>
+            </button>
+            <figcaption><svg aria-hidden="true"><use href="#i-zoom"/></svg>Clique para ampliar</figcaption>
+          </figure>
+        </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="sec dark foot">
+  <div class="wrap foot__in">
+    <div>
+      <img data-img="logo_w" data-now alt="SEIF Santa Catarina" width="101" height="36">
+      <p>Manual de uso do SEIF — Portal do Fornecedor. Edição 2026, atualizada com as telas atuais do sistema.</p>
+    </div>
+    <div>
+      <div class="foot__brands"><img class="brands__sesi" data-img="logo_sesi" alt="SESI" width="470" height="176" loading="lazy" decoding="async"><img class="brands__saude" data-img="logo_saude" alt="SESI Saúde" width="553" height="95" loading="lazy" decoding="async"></div>
+      <small>As imagens e os vídeos usam dados fictícios.</small>
+      <small>SESI Santa Catarina</small>
+    </div>
+  </div>
+</footer>
+
+<dialog class="palette" id="busca" aria-label="Buscar no manual">
+  <div class="palette__in">
+    <svg aria-hidden="true"><use href="#i-busca"/></svg>
+    <input type="search" placeholder="O que você precisa fazer?" aria-label="Buscar no manual" autocomplete="off">
+    <button class="palette__close" type="button" aria-label="Fechar a busca">Esc</button>
+  </div>
+  <div class="palette__res" role="listbox" aria-label="Resultados"></div>
+  <div class="palette__foot"><span>↑ ↓ navegar</span><span>Enter abrir</span><span>Esc fechar</span></div>
+</dialog>
+
+<dialog class="zoom" id="zoom" aria-label="Imagem ampliada">
+  <div class="zoom__bar"><button type="button" data-modo>Tamanho real</button><button type="button" data-fechar>Fechar ✕</button></div>
+  <div class="zoom__stage"><img alt=""></div>
+  <p class="zoom__cap"></p>
+</dialog>
+
+<script>window.IMAGENS = {"logo_w": "assets/img/comum/logo_w.svg", "logo_sesi": "assets/img/comum/logo_sesi.webp", "logo_saude": "assets/img/comum/logo_saude.svg", "capa": "assets/img/comum/capa.webp", "s1_5": "assets/img/terceiro/s1_5.webp", "s3_1": "assets/img/terceiro/s3_1.webp", "poster_02": "assets/img/terceiro/poster_02.webp", "poster_04": "assets/img/terceiro/poster_04.webp", "s4_6_3": "assets/img/terceiro/s4_6_3.webp", "s3_3": "assets/img/terceiro/s3_3.webp", "s2_2": "assets/img/terceiro/s2_2.webp", "s7_1": "assets/img/terceiro/s7_1.webp", "s4_6_2": "assets/img/terceiro/s4_6_2.webp", "s1_4": "assets/img/terceiro/s1_4.webp", "s4_1": "assets/img/terceiro/s4_1.webp", "s6_3": "assets/img/terceiro/s6_3.webp", "s3_2": "assets/img/terceiro/s3_2.webp", "s4_5": "assets/img/terceiro/s4_5.webp", "poster_05": "assets/img/terceiro/poster_05.webp", "s2_3": "assets/img/terceiro/s2_3.webp", "s5_1": "assets/img/terceiro/s5_1.webp", "hero_a": "assets/img/terceiro/hero_a.webp", "s2_4": "assets/img/terceiro/s2_4.webp", "poster_03": "assets/img/terceiro/poster_03.webp", "s4_6_1b": "assets/img/terceiro/s4_6_1b.webp", "poster_06": "assets/img/terceiro/poster_06.webp", "s6_5": "assets/img/terceiro/s6_5.webp", "s2_1": "assets/img/terceiro/s2_1.webp", "s4_6_1": "assets/img/terceiro/s4_6_1.webp", "s5_3": "assets/img/terceiro/s5_3.webp", "s6_1": "assets/img/terceiro/s6_1.webp", "s4_7": "assets/img/terceiro/s4_7.webp", "poster_07": "assets/img/terceiro/poster_07.webp", "s4_6_2c": "assets/img/terceiro/s4_6_2c.webp", "s7_2": "assets/img/terceiro/s7_2.webp", "s4_2": "assets/img/terceiro/s4_2.webp", "s4_6_2b": "assets/img/terceiro/s4_6_2b.webp", "poster_01": "assets/img/terceiro/poster_01.webp", "s4_6_3a": "assets/img/terceiro/s4_6_3a.webp", "hero_b": "assets/img/terceiro/hero_b.webp", "s5_2": "assets/img/terceiro/s5_2.webp", "s1_2": "assets/img/terceiro/s1_2.webp", "s3_4": "assets/img/terceiro/s3_4.webp", "s4_3": "assets/img/terceiro/s4_3.webp", "s7_4": "assets/img/terceiro/s7_4.webp", "s1_3": "assets/img/terceiro/s1_3.webp", "s1_1": "assets/img/terceiro/s1_1.webp", "s7_3": "assets/img/terceiro/s7_3.webp"};
+window.SUGESTOES = ["cadastro", "senha", "trabalhador", "planilha", "documentos", "lupa", "subcontratada", "rascunho", "irregular", "usuário"];</script>
+<script src="assets/js/manual.js"></script>
+</body>
+</html>
