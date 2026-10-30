@@ -112,7 +112,7 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 .mark{display:flex;align-items:center;gap:14px;white-space:nowrap}
 .mark img{height:30px;width:auto}
 .mark__name{font-size:13px;font-weight:600;color:#DDF5E8;border-left:1px solid rgba(255,255,255,.22);padding-left:14px;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
-@media(min-width:1161px){.mark__name{display:none}}
+@media(min-width:1501px){.mark__name{display:none}}
 .bar.scrolled .mark__name{opacity:1;transform:none}
 @media(max-width:560px){.mark__name{display:none}}
 .bar__nav{display:flex;gap:18px;margin-left:auto;font-size:13px;font-weight:500;color:#BFE6D0}
@@ -124,7 +124,7 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 .bar__search svg{width:16px;height:16px}
 .bar__menu{display:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:8px 13px;border:1px solid rgba(255,255,255,.3);border-radius:999px}
 .bar__progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,#2DEA79,#CAFFDF);transform-origin:0 50%;transform:scaleX(var(--p,0))}
-@media(max-width:1160px){
+@media(max-width:1500px){
   .bar__nav{display:none}
   .bar__search{margin-left:auto}
   .bar__menu{display:inline-flex}
@@ -457,8 +457,8 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 @media(max-width:900px){.marks .mark__name{display:none}}
 /* com o menu inteiro na barra (computador), o menu fica um pouco mais junto,
    para sobrar folga entre as marcas e ele em qualquer largura */
-@media(min-width:1161px){.marks{gap:13px}.bar__in{gap:18px}.bar__nav{gap:16px}}
-@media(min-width:1161px) and (max-width:1339px){.bar__search kbd{display:none}}
+@media(min-width:1501px){.marks{gap:13px}.bar__in{gap:18px}.bar__nav{gap:16px}}
+@media(min-width:1501px) and (max-width:1599px){.bar__search kbd{display:none}}
 @media(max-width:640px){.marks{gap:10px}.lg--seif{--h:20px}.lg--sesi{--h:16px}.lg--saude{--h:13.5px}.marks__sep{height:19px}}
 @media(max-width:400px){
   .marks{gap:8px}.lg--seif{--h:19px}.lg--sesi{--h:15px}.lg--saude{--h:12.5px}.marks__sep{height:17px}
@@ -469,10 +469,10 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 /* ---------- SITE: link para trocar de manual e página inicial ---------- */
 .bar__swap{flex:none;font-size:12px;font-weight:600;color:#DDF5E8;text-decoration:none;border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:7px 12px;white-space:nowrap}
 .bar__swap:hover,.bar__swap:focus-visible{color:#76FFAD;border-color:#76FFAD}
-@media(max-width:1160px){.bar__swap{display:none}}
-@media(min-width:1161px) and (max-width:1439px){.bar__swap{font-size:0;padding:0;width:34px;height:34px;display:grid;place-items:center}.bar__swap::before{content:'⇄';font-size:16px}}
+@media(max-width:1500px){.bar__swap{display:none}}
+@media(min-width:1501px) and (max-width:1679px){.bar__swap{font-size:0;padding:0;width:34px;height:34px;display:grid;place-items:center}.bar__swap::before{content:'⇄';font-size:16px}}
 .bar__nav a.only-mobile{display:none}
-@media(max-width:1160px){.bar__nav a.only-mobile{display:block}}
+@media(max-width:1500px){.bar__nav a.only-mobile{display:block}}
 
 /* ---------- PÁGINA INICIAL (index.html) ---------- */
 .choose{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
@@ -527,6 +527,37 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 }
 @media(prefers-reduced-motion:reduce){.stage__item,.stage__item.on{transition:none;transform:none}}
 @media print{.stage-col{display:none}.steps.has-stage .step>.shot,.steps.has-stage .step>.shots{display:block}}
-.foot small.foot__sup{font-family:inherit;font-size:14px;color:#fff;margin:4px 0 10px}
 .foot__sup a{color:#7ef0ad;font-weight:700;text-decoration:none;white-space:nowrap}
 .foot__sup a:hover{text-decoration:underline}
+
+/* ---------- SITE: atalho do suporte (WhatsApp) na barra ---------- */
+.bar__sup{flex:none;display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:#0E3B24;background:#76FFAD;border-radius:999px;padding:7px 13px;text-decoration:none;white-space:nowrap;margin-left:12px;transition:filter .2s}
+.bar__sup:hover{filter:brightness(1.08)}
+.bar__sup svg{width:16px;height:16px}
+.bar__in > .bar__sup + .bar__search{margin-left:10px}
+@media(min-width:1501px) and (max-width:1679px){.bar__sup span{display:none}.bar__sup{padding:8px}}
+@media(max-width:420px){.bar__sup span{display:none}.bar__sup{padding:8px}}
+@media(max-width:1500px){.bar__sup{margin-left:auto}.bar__in > .bar__sup ~ .bar__search{margin-left:0}}
+.bar__search,.bar__menu{flex:none}
+/* ---------- SITE: atalho do suporte nos resultados da busca ---------- */
+.palette__sup{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;margin-top:6px;padding:11px 14px;border-radius:12px;border:1px dashed #9ad9b6;text-decoration:none;color:inherit;background:rgba(118,255,173,.10)}
+.palette__sup .code{grid-row:span 2;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#76FFAD;color:#0E3B24;font-weight:700}
+.palette__sup small{opacity:.75}
+.palette__sup:hover{background:rgba(118,255,173,.22)}
+
+/* ---------- SITE: rodapé com o suporte no canto inferior direito ---------- */
+.foot__in{align-items:center}
+.foot__in .foot__brands{margin-bottom:0}
+.foot__base{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.foot__notes small+small{margin-top:6px}
+.foot__sup{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-left:auto;text-align:right}
+.foot__sup-t{font-size:13.5px;color:#CFEBDB;line-height:1.4}
+.foot__sup-t b{display:block;font-size:15px;color:#fff}
+.foot__sup-b{display:flex;gap:8px}
+.foot__btn{display:inline-flex;align-items:center;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.4);white-space:nowrap}
+.foot__btn:hover{border-color:#76FFAD;color:#76FFAD}
+.foot__btn--wa{background:#76FFAD;border-color:#76FFAD;color:#0E3B24}
+.foot__btn--wa:hover{color:#0E3B24;filter:brightness(1.08)}
+@media(max-width:640px){.foot__sup{margin-left:0;text-align:left}}
+.foot a.foot__btn{color:#fff}
+.foot a.foot__btn--wa,.foot a.foot__btn--wa:hover{color:#0E3B24}

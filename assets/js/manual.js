@@ -288,27 +288,73 @@
       const cap = s.closest('section').dataset.title;
       return {
         el: s, codigo: s.dataset.code, titulo, cap,
+        wTitulo: normal(titulo).split(/[^a-z0-9.]+/).filter(Boolean),
+        wTudo: normal(s.dataset.code + ' ' + titulo + ' ' + s.textContent + ' ' + (s.dataset.k || '') + ' ' + cap).split(/[^a-z0-9.]+/).filter(Boolean),
         tTitulo: normal(titulo),
         tTudo: normal(s.dataset.code + ' ' + titulo + ' ' + s.textContent + ' ' + (s.dataset.k || '') + ' ' + cap)
       };
     });
 
+    // busca "por letra de música": aceita a pergunta do jeito que a pessoa escreve
+    const PARADAS = new Set('a o as os um uma uns umas de do da dos das no na nos nas em para pra pro por com sem que quando como onde qual quais quem e ou se ao aos meu minha meus minhas seu sua seus suas esse essa isso este esta isto ele ela eles elas eu voce voces tem ter ha esta estao estou foi sao ser fazer faco faz posso pode alguma algum algo nao sim mais muito ja agora aqui ali la entao tipo bom dia tarde noite ola oi boa obrigado obrigada duvida pergunta preciso queria quero gostaria saber ajuda recebe receber'.split(' '));
+    const SINONIMOS = [
+      ['venc', 'vencer', 'vencimento', 'vencido', 'vencendo', 'validade', 'expira', 'expirar', 'expirado', 'prazo'],
+      ['notifica', 'notificacao', 'notificacoes', 'aviso', 'avisos', 'alerta', 'sino', 'email', 'e-mail', 'mensagem'],
+      ['trabalhador', 'trabalhadores', 'funcionario', 'funcionarios', 'colaborador', 'colaboradores', 'empregado', 'pessoa'],
+      ['visitante', 'visitantes', 'visita', 'convidado'],
+      ['document', 'documento', 'documentos', 'arquivo', 'anexo', 'anexar', 'aso', 'pgr', 'pcmso'],
+      ['irregular', 'pendencia', 'pendente', 'bloqueado', 'reprovado', 'problema'],
+      ['usuario', 'usuarios', 'login', 'senha', 'perfil'],
+      ['fornecedor', 'fornecedores', 'terceiro', 'terceiros', 'prestador', 'contratada', 'subcontratada'],
+      ['vincular', 'vinculo', 'vincula', 'vinculacao', 'associar', 'liberar', 'liberacao'],
+      ['relatorio', 'relatorios', 'painel', 'grafico', 'dashboard', 'exportar', 'planilha']
+    ];
+    const raiz = t => t.length > 5 ? t.slice(0, 5) : t;
+    const grupoDe = new Map();
+    SINONIMOS.forEach((g, i) => g.forEach(w => grupoDe.set(raiz(w), i)));
+    function expandir(t) {
+      const r = raiz(t), g = grupoDe.get(r);
+      return g == null ? [r] : [...new Set(SINONIMOS[g].map(raiz))];
+    }
+    const tokens = t => normal(t).replace(/[^a-z0-9.\- ]/g, ' ').split(/\s+/).filter(w => w.length > 1 && !PARADAS.has(w));
+
     let achados = [], sel = 0;
+    function suporte(texto) {
+      const a = document.createElement('a');
+      const msg = 'Olá! Vim pelo manual do SEIF e não encontrei a resposta: ' + texto;
+      a.href = 'https://wa.me/554833323343?text=' + encodeURIComponent(msg);
+      a.target = '_blank'; a.rel = 'noopener';
+      a.className = 'palette__sup';
+      a.innerHTML = '<span class="code">?</span><strong>Não achou? Fale com o suporte no WhatsApp</strong><small>(48) 3332-3343 · a sua pergunta já vai escrita na mensagem</small>';
+      return a;
+    }
     function procurar() {
-      const termos = normal(campo.value).split(/\s+/).filter(Boolean);
+      const texto = campo.value.trim();
+      const termos = tokens(texto);
       lista.innerHTML = '';
-      if (!termos.length) { lista.append(sugestoes()); achados = []; return; }
+      if (!texto) { lista.append(sugestoes()); achados = []; return; }
+      const grupos = termos.map(expandir);
       achados = indice
-        .filter(p => termos.every(t => p.tTudo.includes(t)))
-        .map(p => ({ p, nota: termos.reduce((n, t) => n + (p.tTitulo.includes(t) ? 2 : 0) + (p.codigo === t ? 5 : 0), 0) }))
-        .sort((a, b) => b.nota - a.nota)
-        .slice(0, 8)
-        .map(x => x.p);
+        .map(p => {
+          let nota = 0, bate = 0;
+          grupos.forEach((g, i) => {
+            const t = termos[i];
+            if (p.codigo === t) { nota += 8; bate++; return; }
+            let n = 0;
+            g.forEach(r => { if (p.wTitulo.some(w => w.startsWith(r))) n = Math.max(n, 3); else if (p.wTudo.some(w => w.startsWith(r))) n = Math.max(n, 1); });
+            if (n) { nota += n; bate++; }
+          });
+          return { p, nota, bate };
+        })
+        .filter(x => x.bate && x.bate >= (termos.length <= 2 ? termos.length : Math.ceil(termos.length * 0.6)))
+        .sort((a, b) => b.bate - a.bate || b.nota - a.nota);
+      const topo = achados.length ? achados[0].nota : 0;
+      achados = achados.filter(x => x.nota >= topo * 0.5).slice(0, 6).map(x => x.p);
       if (!achados.length) {
         const vazio = document.createElement('p');
         vazio.className = 'palette__empty';
-        vazio.textContent = 'Nada encontrado. Tente outra palavra, como "trabalhador", "senha" ou "documento".';
-        lista.append(vazio);
+        vazio.textContent = 'Não encontrei esse assunto no manual.';
+        lista.append(vazio, suporte(texto));
         return;
       }
       sel = 0;
@@ -324,6 +370,7 @@
         a.addEventListener('mousemove', () => marcar(i));
         lista.append(a);
       });
+      lista.append(suporte(texto));
       marcar(0);
     }
     function sugestoes() {
@@ -340,8 +387,8 @@
     }
     function marcar(i) {
       sel = i;
-      $$('a', lista).forEach((a, k) => a.setAttribute('aria-selected', String(k === i)));
-      const atual = $$('a', lista)[i];
+      $$('a[role=option]', lista).forEach((a, k) => a.setAttribute('aria-selected', String(k === i)));
+      const atual = $$('a[role=option]', lista)[i];
       if (atual) atual.scrollIntoView({ block: 'nearest' });
     }
     function ir(p) {
