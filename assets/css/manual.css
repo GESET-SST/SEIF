@@ -561,3 +561,12 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 @media(max-width:640px){.foot__sup{margin-left:0;text-align:left}}
 .foot a.foot__btn{color:#fff}
 .foot a.foot__btn--wa,.foot a.foot__btn--wa:hover{color:#0E3B24}
+/* ---------- SITE: barra superior mais larga (logo mais à esquerda) ---------- */
+.bar__in{max-width:1600px;padding:0 40px}
+@media(max-width:640px){.bar__in{padding:0 18px}}
+/* ---------- SITE: link para o SEIF (sistema oficial) ---------- */
+.btn.btn--seif{border-color:#76FFAD;color:#76FFAD}
+.btn.btn--seif:hover{background:rgba(118,255,173,.14)}
+.home-seif{margin-top:28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:#CFEBDB;font-size:15px}
+.foot a.foot__seif{display:inline-block;margin-bottom:10px;font-size:14px;font-weight:700;color:#7ef0ad;text-decoration:none}
+.foot a.foot__seif:hover{text-decoration:underline}
