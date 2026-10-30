@@ -527,3 +527,6 @@ kbd{font-family:var(--mono);font-size:11px;padding:1px 6px;border:1px solid curr
 }
 @media(prefers-reduced-motion:reduce){.stage__item,.stage__item.on{transition:none;transform:none}}
 @media print{.stage-col{display:none}.steps.has-stage .step>.shot,.steps.has-stage .step>.shots{display:block}}
+.foot small.foot__sup{font-family:inherit;font-size:14px;color:#fff;margin:4px 0 10px}
+.foot__sup a{color:#7ef0ad;font-weight:700;text-decoration:none;white-space:nowrap}
+.foot__sup a:hover{text-decoration:underline}

@@ -63,6 +63,10 @@ Voz sintética: Chatterbox multilíngue (Resemble AI, licença MIT), com referê
 - **6.1** Clique no sino para abrir a lista completa.
 - **6.2** Aqui aparecem todos os avisos: documentos para aprovação, documentos irregulares e documentos a vencer.
 - **6.2** Use os filtros para encontrar um aviso por data, categoria ou título.
+- **6.3** Para escolher o que você recebe, clique em “Configurar notificações”.
+- **6.3** Em Configurações gerais, marque se quer receber os avisos no sistema e um resumo semanal por e-mail.
+- **6.4** Em Minhas configurações, marque os tipos de aviso que interessam a você.
+- **6.4** Clique em “Salvar”. Uma mensagem confirma que as configurações foram salvas.
 
 ### Tema 07 — Como acessar relatórios e painéis
 
